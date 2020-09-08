@@ -1,0 +1,24 @@
+{
+  "name": "mf-root",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "lerna run build",
+    "build:prod": "lerna run build -- --prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valorkin/sap-ng-mf.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valorkin/sap-ng-mf/issues"
+  },
+  "homepage": "https://github.com/valorkin/sap-ng-mf#readme",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
