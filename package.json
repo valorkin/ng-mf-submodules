@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "build": "lerna run build",
-    "build:prod": "lerna run build -- --prod",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:prod": "lerna run build -- --prod"
   },
   "repository": {
     "type": "git",
