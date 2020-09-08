@@ -52,8 +52,8 @@ const mfe3Config = {
   entryModule: '../packages/ng8-app/src/app/app.module#AppModule',
   shared: ['@angular/core', '@angular/common', '@angular/router'],
   exposes: {
-    // './Analyze': '../packages/ng10-app/src/app/analyze.component.ts',
-    // './Enrich': '../packages/ng10-app/src/app/enrich.component.ts'
+    './Analyze': '../packages/ng8-app/src/app/analyze.component.ts',
+    './Enrich': '../packages/ng8-app/src/app/enrich.component.ts'
   }
 }
 
@@ -133,5 +133,4 @@ function _configTemplate(ngConfig, projectConfig, pjroot) {
   return wpconfig;
 }
 
-// module.exports = [fromNgConfig(shellConfig), fromNgConfig(mfe1Config), fromNgConfig(mfe2Config)];
-module.exports = [fromNgConfig(mfe3Config)];
+module.exports = [fromNgConfig(shellConfig), fromNgConfig(mfe1Config), fromNgConfig(mfe2Config), fromNgConfig(mfe3Config)];
