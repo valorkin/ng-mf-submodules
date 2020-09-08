@@ -43,6 +43,20 @@ const mfe2Config = {
   }
 }
 
+const mfe3Config = {
+  ngConfigPath: '../packages/ng8-app/angular.json',
+  name: 'ng8-app',
+  libName: 'mfe3',
+  port: 3002,
+  publicPath: 'http://localhost:3002/',
+  entryModule: '../packages/ng8-app/src/app/app.module#AppModule',
+  shared: ['@angular/core', '@angular/common', '@angular/router'],
+  exposes: {
+    // './Analyze': '../packages/ng10-app/src/app/analyze.component.ts',
+    // './Enrich': '../packages/ng10-app/src/app/enrich.component.ts'
+  }
+}
+
 function fromNgConfig(projectConfig = {}) {
   const pathToConfig = projectConfig.ngConfigPath;
   const ngConfig = _loadNgConfig(pathToConfig);
@@ -120,4 +134,4 @@ function _configTemplate(ngConfig, projectConfig, pjroot) {
 }
 
 // module.exports = [fromNgConfig(shellConfig), fromNgConfig(mfe1Config), fromNgConfig(mfe2Config)];
-module.exports = [fromNgConfig(mfe2Config)];
+module.exports = [fromNgConfig(mfe3Config)];
