@@ -36,7 +36,7 @@ const mfe2Config = {
   port: 3001,
   publicPath: 'http://localhost:3001/',
   entryModule: '../packages/ng10-app/src/app/app.module#AppModule',
-  shared: ['@angular/core', '@angular/common', '@angular/router'],
+  // shared: ['@angular/core', '@angular/common', '@angular/router'],
   exposes: {
     './Analyze': '../packages/ng10-app/src/app/analyze.component.ts',
     './Enrich': '../packages/ng10-app/src/app/enrich.component.ts'
