@@ -1,18 +1,27 @@
 ## Steps to run this
 
+### quick start
+```bash
+npm i
+npm start
+```
+
 ### install
 ```bash
 npm i
-lerna bootstrap
-npm i --prefix mf-builder
 ```
 
 ### build
 ```bash
-npm run build --prefix mf-builder
+npm run build
 ```
 
 ### serve
 ```bash
-npm run serve:dist --prefix mf-builder
+npm run serve
+```
+
+### start will do clean build and start
+```
+npm start
 ```

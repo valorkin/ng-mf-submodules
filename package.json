@@ -4,7 +4,14 @@
   "description": "",
   "main": "index.js",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "start": "npm run build && npm run serve",
+    "build": "npm run build --prefix mf-builder",
+    "serve": "npm run serve:dist --prefix mf-builder",
+    "postinstall": "lerna bootstrap && npm run inst:builder",
+    "lerna": "lerna",
+    "inst:builder": "npm i --prefix mf-builder"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/valorkin/sap-ng-mf.git"
