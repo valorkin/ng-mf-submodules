@@ -51,6 +51,19 @@
     "scope": "Page",
     "category": "main",
     "hasRoutes": false
+  },
+  {
+    "id": "contentItem.recommendedCategories",
+    "provider": "Ariba",
+    "version": "0.0.1",
+    "remoteEntry": "http://localhost:4203/remoteEntry.js",
+    "remoteName": "contentRecommendedCategories",
+    "exposedModule": "./RecommendedCategories",
+    "displayName": "RecommendedCategoriesComponent",
+    "componentName": "RecommendedCategoriesComponent",
+    "scope": "Page",
+    "category": "main",
+    "hasRoutes": false
   }
 ]
 
