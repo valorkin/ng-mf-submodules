@@ -13,7 +13,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "preserveSymlinks": true,
             "outputPath": "dist/one-bx-shell-app",
             "index": "src/index.html",
             "main": "src/main.ts",

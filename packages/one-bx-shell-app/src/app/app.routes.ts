@@ -1,7 +1,8 @@
 import {Routes} from '@angular/router';
 import {LandingComponent} from './landing/landing.component';
-import {PluginPageLauncherComponent} from '@fundamental-ngx/app-shell';
-// import {PluginPageLauncherComponent} from './plugin-page-launcher.component';
+// import {PluginPageLauncherComponent} from '@fundamental-ngx/app-shell';
+import {PluginPageLauncherComponent} from './plugin-page-launcher.component';
+
 
 export const APP_ROUTES: Routes = [
   {
