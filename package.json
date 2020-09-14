@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "start": "npm run build && npm run serve",
+    "start:prod": "npm run build -- -- --mode production && npm run serve",
     "build": "npm run build --prefix mf-builder",
     "serve": "npm run serve:dist --prefix mf-builder",
     "postinstall": "lerna bootstrap && npm run inst:builder",

@@ -6,6 +6,11 @@ npm i
 npm start
 ```
 
+### start in production mode
+```bash
+npm run start:prod
+```
+
 ### install
 ```bash
 npm i
