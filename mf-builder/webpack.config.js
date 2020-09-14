@@ -4,23 +4,32 @@ const path = require('path');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
+const sharedDep = (name) => {
+  return {
+    [name]: {singleton: true}
+  }
+};
 
 const shellConfig = {
   projectName: 'one-bx-shell-app',
+  remotes: {
+    contentReqApp: 'contentReqApp@http://localhost:4201/remoteEntry.js',
+    contentItemApp: 'contentItemApp@http://localhost:4202/remoteEntry.js',
+    contentRecommendedCategories: 'contentRecommendedCategories@http://localhost:4203/remoteEntry.js',
+  },
   name: 'oneBxShellApp',
   port: 4200,
   publicPath: 'http://localhost:4200/',
   projectRoot: '../packages/one-bx-shell-app',
   entryModule: '../packages/one-bx-shell-app/src/app/app.module#AppModule',
   shared: [
-    '@angular/core',
-    '@angular/common',
-    '@angular/router',
-    '@fundamental-ngx/core',
-    '@fundamental-ngx/app-shell'
+    sharedDep('@angular/core'),
+    sharedDep('@angular/common'),
+    sharedDep('@angular/router'),
+    sharedDep('@fundamental-ngx/core'),
+    sharedDep('@fundamental-ngx/app-shell')
   ],
-  exposes: {},
-  remotes: {}
+  exposes: {}
 };
 
 const mfe1Config = {
@@ -31,18 +40,17 @@ const mfe1Config = {
   projectRoot: '../packages/content-req-app',
   entryModule: '../packages/content-req-app/src/app/app.module#AppModule',
   shared: [
-    '@angular/core',
-    '@angular/common',
-    '@angular/router',
-    '@fundamental-ngx/core',
-    '@fundamental-ngx/app-shell'
+    sharedDep('@angular/core'),
+    sharedDep('@angular/common'),
+    sharedDep('@angular/router'),
+    sharedDep('@fundamental-ngx/core'),
+    sharedDep('@fundamental-ngx/app-shell')
   ],
   exposes: {
-    './Download':     '../packages/content-req-app/src/app/download.component.ts',
-    './PrList':       '../packages/content-req-app/src/app/pr-list/pr-list.component.ts'
+    './Download': '../packages/content-req-app/src/app/download.component.ts',
+    './PrList': '../packages/content-req-app/src/app/pr-list/pr-list.component.ts'
   }
 };
-
 
 const mfe2Config = {
   projectName: 'content-item-app',
@@ -52,15 +60,34 @@ const mfe2Config = {
   projectRoot: '../packages/content-item-app',
   entryModule: '../packages/content-item-app/src/app/app.module#AppModule',
   shared: [
-    '@angular/core',
-    '@angular/common',
-    '@angular/router',
-    '@fundamental-ngx/core',
-    '@fundamental-ngx/app-shell'
+    sharedDep('@angular/core'),
+    sharedDep('@angular/common'),
+    sharedDep('@angular/router'),
+    sharedDep('@fundamental-ngx/core'),
+    sharedDep('@fundamental-ngx/app-shell')
   ],
   exposes: {
-    './CatalogItem':  '../packages/content-item-app/src/app/item-page/item-page.component.ts',
-    './YourFavorites':'../packages/content-item-app/src/app/your-favorites/your-favorites.component.ts',
+    './CatalogItem': '../packages/content-item-app/src/app/item-page/item-page.component.ts',
+    './YourFavorites': '../packages/content-item-app/src/app/your-favorites/your-favorites.component.ts',
+  }
+};
+
+const mfe3Config = {
+  projectName: 'content-recommended-categories',
+  name: 'contentRecommendedCategories',
+  port: 4203,
+  publicPath: 'http://localhost:4203/',
+  projectRoot: '../packages/content-recommended-categories',
+  entryModule: '../packages/content-recommended-categories/src/app/app.module#AppModule',
+  shared: [
+    sharedDep('@angular/core'),
+    sharedDep('@angular/common'),
+    sharedDep('@angular/router'),
+    sharedDep('@fundamental-ngx/core'),
+    sharedDep('@fundamental-ngx/app-shell')
+  ],
+  exposes: {
+    './RecommendedCategories': '../packages/content-recommended-categories/src/app/recommended-categories/recommended-categories.component.ts',
   }
 };
 
@@ -90,7 +117,7 @@ function _configTemplate(ngConfig, projectConfig) {
   return {
     entry: [`${projectRoot}/${options.polyfills}`, `${projectRoot}/${options.main}`],
     resolve: {
-      mainFields: ["browser", "module", "main"]
+      mainFields: ["es2015", "browser", "module", "main"]
     },
     devServer: {
       contentBase: path.normalize(path.join(__dirname, '../', options.outputPath)),
@@ -111,7 +138,8 @@ function _configTemplate(ngConfig, projectConfig) {
         library: {type: "var", name},
         filename: "remoteEntry.js",
         exposes,
-        shared
+        shared,
+        shareScope: options.shareScope || 'default'
       }),
       new AotPlugin({
         skipCodeGeneration: false,
@@ -145,5 +173,6 @@ function _configTemplate(ngConfig, projectConfig) {
 module.exports = [
   fromNgConfig(mfe1Config, '../packages/content-req-app/angular.json'),
   fromNgConfig(mfe2Config, '../packages/content-item-app/angular.json'),
+  fromNgConfig(mfe3Config, '../packages/content-recommended-categories/angular.json'),
   fromNgConfig(shellConfig, '../packages/one-bx-shell-app/angular.json'),
 ];
