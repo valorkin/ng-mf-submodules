@@ -1,0 +1,19 @@
+.img-container, .action-container {
+  width: 100%;
+  display: flex;
+}
+
+.img-container {
+  justify-content: center;
+}
+
+.action-container {
+  justify-content: space-around;
+  align-items: center;
+}
+.action-container .fd-button {
+  border-radius: 50px;
+}
+.prod-desc {
+  color: #4c4c4c;
+}

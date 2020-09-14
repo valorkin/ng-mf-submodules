@@ -1,0 +1,56 @@
+[
+  {
+    "id": "contentReq.testCobra",
+    "provider": "Ariba",
+    "version": "1.0.1",
+    "remoteEntry": "http://localhost:4201/remoteEntry.js",
+    "remoteName": "contentReqApp",
+    "exposedModule": "./Download",
+    "displayName": "DownloadComponent",
+    "componentName": "DownloadComponent",
+    "scope": "Page",
+    "category": "main",
+    "hasRoutes": false
+  },
+  {
+    "id": "contentReq.prList",
+    "provider": "Ariba",
+    "version": "0.0.1",
+    "remoteEntry": "http://localhost:4201/remoteEntry.js",
+    "remoteName": "contentReqApp",
+    "exposedModule": "./PrList",
+    "displayName": "PurchaseRequisitionList",
+    "componentName": "PrListComponent",
+    "scope": "Page",
+    "category": "main",
+    "hasRoutes": false
+  },
+  {
+    "id": "contentItem.yourFavorite",
+    "provider": "Ariba",
+    "version": "0.0.1",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "remoteName": "contentItemApp",
+    "exposedModule": "./YourFavorites",
+    "displayName": "YourFavoritesComponent",
+    "componentName": "YourFavoritesComponent",
+    "scope": "Page",
+    "category": "main",
+    "hasRoutes": false
+  },
+  {
+    "id": "contentItem.catalogItem",
+    "provider": "Ariba",
+    "version": "0.0.1",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "remoteName": "contentItemApp",
+    "remoteRoute": "item-detail",
+    "exposedModule": "./CatalogItem",
+    "displayName": "ItemPageComponent",
+    "componentName": "ItemPageComponent",
+    "scope": "Page",
+    "category": "main",
+    "hasRoutes": false
+  }
+]
+

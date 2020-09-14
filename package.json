@@ -5,8 +5,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build": "lerna run build",
-    "build:prod": "lerna run build -- --prod"
+    "build:mf": "cd ng9-module-federation-builder && npm run build",
+    "serve:mf": "cd ng9-module-federation-builder && npm run serve:dist"
   },
   "repository": {
     "type": "git",
