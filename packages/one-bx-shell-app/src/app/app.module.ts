@@ -10,19 +10,22 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppShellModule} from '@fundamental-ngx/app-shell';
 import {HttpClientModule} from '@angular/common/http';
 import {LandingComponent} from './landing/landing.component';
+import {PluginPageLauncherComponent} from './plugin-page-launcher.component';
 
 
 @NgModule({
   imports: [
     BrowserModule,
+    RouterModule.forRoot(APP_ROUTES),
     HttpClientModule,
     IconModule, LayoutGridModule, LayoutPanelModule, LinkModule,
-    RouterModule.forRoot(APP_ROUTES),
     BrowserAnimationsModule,
     AppShellModule.forRoot('assets/config/plugins.json')
+
   ],
   declarations: [
     AppComponent,
+    PluginPageLauncherComponent,
     LandingComponent
   ],
   bootstrap: [AppComponent]
