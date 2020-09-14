@@ -15,8 +15,7 @@ import {Component} from '@angular/core';
   `]
 })
 export class LandingComponent {
-  showPRList = false;
-  showYourFav = false;
+
 
   constructor() {
   }
