@@ -10,7 +10,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppShellModule} from '@fundamental-ngx/app-shell';
 import {HttpClientModule} from '@angular/common/http';
 import {LandingComponent} from './landing/landing.component';
-import {PluginPageLauncherComponent} from './plugin-page-launcher.component';
 
 
 @NgModule({
@@ -25,7 +24,6 @@ import {PluginPageLauncherComponent} from './plugin-page-launcher.component';
   ],
   declarations: [
     AppComponent,
-    PluginPageLauncherComponent,
     LandingComponent
   ],
   bootstrap: [AppComponent]
