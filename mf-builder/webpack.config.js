@@ -4,6 +4,9 @@ const path = require('path');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
+const webpackMerge = require('webpack-merge');
+const {getStylesConfig} = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs/styles');
+
 const sharedDep = (name) => {
   return {
     [name]: {singleton: true}
@@ -98,7 +101,11 @@ function fromNgConfig(projectConfig = {}, pathToConfig = './angular.json',) {
   if (!ngConfig.projects[projectName]) {
     throw new Error(`Incorrect project name "${projectName}" in "${pathToConfig}"`);
   }
-  return _configTemplate(ngConfig.projects[projectName], projectConfig);
+  const conf1 = _configTemplate(ngConfig.projects[projectName], projectConfig);
+  const conf2 = webpackStylesConfig();
+  const merged = webpackMerge(conf1, conf2);
+  // console.log(merged);
+  return merged;
 }
 
 function _loadNgConfig(pathToConfig) {
@@ -115,7 +122,10 @@ function _configTemplate(ngConfig, projectConfig) {
   const options = ngConfig.architect.build.options;
 
   return {
-    entry: [`${projectRoot}/${options.polyfills}`, `${projectRoot}/${options.main}`],
+    entry: {
+      main: `${projectRoot}/${options.main}`,
+      polyfills: `${projectRoot}/${options.polyfills}`
+    },
     resolve: {
       mainFields: ["es2015", "browser", "module", "main"]
     },
@@ -171,8 +181,68 @@ function _configTemplate(ngConfig, projectConfig) {
 }
 
 module.exports = [
-  fromNgConfig(mfe1Config, '../packages/content-req-app/angular.json'),
+  // fromNgConfig(mfe1Config, '../packages/content-req-app/angular.json'),
   fromNgConfig(mfe2Config, '../packages/content-item-app/angular.json'),
-  fromNgConfig(mfe3Config, '../packages/content-recommended-categories/angular.json'),
-  fromNgConfig(shellConfig, '../packages/one-bx-shell-app/angular.json'),
+  // fromNgConfig(mfe3Config, '../packages/content-recommended-categories/angular.json'),
+  // fromNgConfig(shellConfig, '../packages/one-bx-shell-app/angular.json'),
 ];
+
+function webpackStylesConfig(){
+  const wco = {
+    root: '/home/valorkin/work/sap/sap-ng-mf/packages/content-item-app',
+    buildOptions: {
+      "outputPath": "dist/content-item-app",
+      "index": "src/index.html",
+      "main": "src/main.ts",
+      "polyfills": "src/polyfills.ts",
+      "tsConfig": "tsconfig.app.json",
+      "aot": true,
+      "assets": [],
+      "styles": [
+        "src/styles.css"
+      ],
+      "scripts": [],
+      "stylePreprocessorOptions": {
+        "includePaths": []
+      },
+      "optimization": {
+        "scripts": false,
+        "styles": false
+      },
+      "fileReplacements": [],
+      "resourcesOutputPath": "",
+      "sourceMap": {
+        "vendor": false,
+        "hidden": false,
+        "scripts": true,
+        "styles": true
+      },
+      "vendorChunk": true,
+      "commonChunk": true,
+      "verbose": false,
+      "progress": false,
+      "i18nMissingTranslation": "warning",
+      "extractCss": false,
+      "watch": false,
+      "outputHashing": "none",
+      "deleteOutputPath": true,
+      "preserveSymlinks": false,
+      "extractLicenses": false,
+      "showCircularDependencies": true,
+      "buildOptimizer": false,
+      "namedChunks": true,
+      "subresourceIntegrity": false,
+      "serviceWorker": false,
+      "statsJson": false,
+      "forkTypeChecker": true,
+      "lazyModules": [],
+      "budgets": [],
+      "rebaseRootRelativeCssUrls": false,
+      "crossOrigin": "none",
+      "experimentalRollupPass": false,
+      "allowedCommonJsDependencies": []
+    }
+  }
+  const config = getStylesConfig(wco);
+  return config;
+}
