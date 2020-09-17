@@ -104,7 +104,7 @@ function fromNgConfig(projectConfig = {}, pathToConfig = './angular.json',) {
   const conf1 = _configTemplate(ngConfig.projects[projectName], projectConfig);
   const conf2 = webpackStylesConfig();
   const merged = webpackMerge(conf1, conf2);
-  // console.log(merged);
+  const _test = Object.create(merged);
   return merged;
 }
 
@@ -122,9 +122,12 @@ function _configTemplate(ngConfig, projectConfig) {
   const options = ngConfig.architect.build.options;
 
   return {
+    devtool: false,
+    profile: false,
+    watch: false,
     entry: {
-      main: `${projectRoot}/${options.main}`,
-      polyfills: `${projectRoot}/${options.polyfills}`
+      main: [`${projectRoot}/${options.main}`],
+      polyfills: [`${projectRoot}/${options.polyfills}`]
     },
     resolve: {
       mainFields: ["es2015", "browser", "module", "main"]
@@ -135,10 +138,10 @@ function _configTemplate(ngConfig, projectConfig) {
     },
     module: {
       rules: [
-        {
-          test: /\.css$/i,
-          use: ['style-loader', 'css-loader'],
-        },
+        // {
+        //   test: /\.css$/i,
+        //   use: ['style-loader', 'css-loader'],
+        // },
         {test: /\.ts$/, loader: "@ngtools/webpack"}
       ]
     },
@@ -182,8 +185,8 @@ function _configTemplate(ngConfig, projectConfig) {
 
 module.exports = [
   // fromNgConfig(mfe1Config, '../packages/content-req-app/angular.json'),
-  fromNgConfig(mfe2Config, '../packages/content-item-app/angular.json'),
-  // fromNgConfig(mfe3Config, '../packages/content-recommended-categories/angular.json'),
+  // fromNgConfig(mfe2Config, '../packages/content-item-app/angular.json'),
+  fromNgConfig(mfe3Config, '../packages/content-recommended-categories/angular.json'),
   // fromNgConfig(shellConfig, '../packages/one-bx-shell-app/angular.json'),
 ];
 
