@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { YourFavoritesModule } from './your-favorites/your-favorites.module';
-import { ItemPageModule } from './item-page/item-page.module';
 import { AppComponent } from './app.component';
+import { SharedModule } from '../../../../libs/shared/src';
 
 @NgModule({
   declarations: [
@@ -11,8 +10,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    YourFavoritesModule,
-    ItemPageModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],

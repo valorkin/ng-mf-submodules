@@ -72,7 +72,7 @@
     "remoteEntry": "http://localhost:4204/remoteEntry.js",
     "remoteName": "nxApp",
     "exposedModule": "./YourFavorites",
-    "displayName": "YourFavoritesComponent",
+    "displayName": "NxComponent",
     "componentName": "YourFavoritesComponent",
     "scope": "Page",
     "category": "main",

@@ -28,6 +28,9 @@
     "nx-app-e2e": {
       "tags": [],
       "implicitDependencies": ["nx-app"]
+    },
+    "shared": {
+      "tags": []
     }
   }
 }

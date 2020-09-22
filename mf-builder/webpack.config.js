@@ -107,8 +107,8 @@ const mfe4Config = {
     sharedDep('@fundamental-ngx/app-shell')
   ],
   exposes: {
-    './CatalogItem': '../packages/nx-app/apps/nx-app/src/app/item-page/item-page.component.ts',
-    './YourFavorites': '../packages/nx-app/apps/nx-app/src/app/your-favorites/your-favorites.component.ts',
+    './CatalogItem': '../packages/nx-app/libs/shared/src/lib/item-page/item-page.component.ts',
+    './YourFavorites': '../packages/nx-app/libs/shared/src/lib/your-favorites/your-favorites.component.ts',
   }
 };
 
