@@ -1,5 +1,8 @@
 ## Steps to run this
 
+## **NOTE**
+install `yarn`  
+
 ### quick start
 ```bash
 npm i

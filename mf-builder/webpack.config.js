@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const webpackMerge = require('webpack-merge');
-const {getStylesConfig} = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs/styles');
+const {getStylesConfig} = require('@angular-devkit/build-angular/src/webpack/configs/styles');
 
 const sharedDep = (name) => {
   return {
@@ -166,7 +166,6 @@ function _configTemplate(ngConfig, projectConfig) {
           from: path.normalize(path.join(projectRoot, sourceRoot, 'assets')), to: 'assets'
         },
       ]),
-      new TestPlugin(),
       new MiniCssExtractPlugin(),
       new HtmlWebpackPlugin({
         template: path.normalize((path.join(projectRoot, options.index)))
@@ -183,34 +182,11 @@ function _configTemplate(ngConfig, projectConfig) {
   }
 }
 
-const AbstractLibraryPlugin = require('webpack/lib/library/AbstractLibraryPlugin');
-const RuntimeGlobals = require('webpack/lib/RuntimeGlobals');
-
-class TestPlugin  {
-  apply(compiler) {
-    const pluginName = 'test';
-    compiler.hooks.thisCompilation.tap('test', (compilation) => {
-      compilation.hooks.normalModuleLoader.tap(pluginName, (lc, m) => {
-        console.log(`test`)
-      })
-      for (const chunk of compilation.chunks) {
-        const set = new Set();
-        set.add(RuntimeGlobals.returnExportsFromRuntime)
-        compilation.chunkGraph.addChunkRuntimeRequirements(chunk, set);
-      }
-
-      compilation.hooks.additionalChunkRuntimeRequirements.tap('test', (chunk, set) => {
-        console.log(`test: `)
-      })
-    })
-  }
-}
-
 module.exports = [
-  // fromNgConfig(mfe1Config, '../packages/content-req-app/angular.json'),
-  // fromNgConfig(mfe2Config, '../packages/content-item-app/angular.json'),
+  fromNgConfig(mfe1Config, '../packages/content-req-app/angular.json'),
+  fromNgConfig(mfe2Config, '../packages/content-item-app/angular.json'),
   fromNgConfig(mfe3Config, '../packages/content-recommended-categories/angular.json'),
-  // fromNgConfig(shellConfig, '../packages/one-bx-shell-app/angular.json'),
+  fromNgConfig(shellConfig, '../packages/one-bx-shell-app/angular.json'),
 ];
 
 function webpackStylesConfig(){
