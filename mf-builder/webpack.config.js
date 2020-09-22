@@ -16,6 +16,7 @@ const shellConfig = {
     contentReqApp: 'contentReqApp@http://localhost:4201/remoteEntry.js',
     contentItemApp: 'contentItemApp@http://localhost:4202/remoteEntry.js',
     contentRecommendedCategories: 'contentRecommendedCategories@http://localhost:4203/remoteEntry.js',
+    nxApp: 'nxApp@http://localhost:4204/remoteEntry.js',
   },
   name: 'oneBxShellApp',
   port: 4200,
@@ -88,6 +89,26 @@ const mfe3Config = {
   ],
   exposes: {
     './RecommendedCategories': '../packages/content-recommended-categories/src/app/recommended-categories/recommended-categories.component.ts',
+  }
+};
+
+const mfe4Config = {
+  projectName: 'nx-app',
+  name: 'nxApp',
+  port: 4204,
+  publicPath: 'http://localhost:4204/',
+  projectRoot: '../packages/nx-app',
+  entryModule: '../packages/nx-app/apps/nx-app/src/app/app.module#AppModule',
+  shared: [
+    sharedDep('@angular/core'),
+    sharedDep('@angular/common'),
+    sharedDep('@angular/router'),
+    sharedDep('@fundamental-ngx/core'),
+    sharedDep('@fundamental-ngx/app-shell')
+  ],
+  exposes: {
+    './CatalogItem': '../packages/nx-app/apps/nx-app/src/app/item-page/item-page.component.ts',
+    './YourFavorites': '../packages/nx-app/apps/nx-app/src/app/your-favorites/your-favorites.component.ts',
   }
 };
 
@@ -174,5 +195,6 @@ module.exports = [
   fromNgConfig(mfe1Config, '../packages/content-req-app/angular.json'),
   fromNgConfig(mfe2Config, '../packages/content-item-app/angular.json'),
   fromNgConfig(mfe3Config, '../packages/content-recommended-categories/angular.json'),
+  fromNgConfig(mfe4Config, '../packages/nx-app/angular.json'),
   fromNgConfig(shellConfig, '../packages/one-bx-shell-app/angular.json'),
 ];

@@ -64,6 +64,19 @@
     "scope": "Page",
     "category": "main",
     "hasRoutes": false
+  },
+  {
+    "id": "nx.yourFavorite",
+    "provider": "Ariba",
+    "version": "0.0.1",
+    "remoteEntry": "http://localhost:4204/remoteEntry.js",
+    "remoteName": "nxApp",
+    "exposedModule": "./YourFavorites",
+    "displayName": "YourFavoritesComponent",
+    "componentName": "YourFavoritesComponent",
+    "scope": "Page",
+    "category": "main",
+    "hasRoutes": false
   }
 ]
 
