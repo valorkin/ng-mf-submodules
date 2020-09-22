@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const webpackMerge = require('webpack-merge');
 const {getStylesConfig} = require('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs/styles');
@@ -137,11 +138,8 @@ function _configTemplate(ngConfig, projectConfig) {
       port
     },
     module: {
+      strictExportPresence: true,
       rules: [
-        // {
-        //   test: /\.css$/i,
-        //   use: ['style-loader', 'css-loader'],
-        // },
         {test: /\.ts$/, loader: "@ngtools/webpack"}
       ]
     },
@@ -168,6 +166,8 @@ function _configTemplate(ngConfig, projectConfig) {
           from: path.normalize(path.join(projectRoot, sourceRoot, 'assets')), to: 'assets'
         },
       ]),
+      new TestPlugin(),
+      new MiniCssExtractPlugin(),
       new HtmlWebpackPlugin({
         template: path.normalize((path.join(projectRoot, options.index)))
       })
@@ -180,6 +180,29 @@ function _configTemplate(ngConfig, projectConfig) {
     },
     // mode: "production"
     mode: "development"
+  }
+}
+
+const AbstractLibraryPlugin = require('webpack/lib/library/AbstractLibraryPlugin');
+const RuntimeGlobals = require('webpack/lib/RuntimeGlobals');
+
+class TestPlugin  {
+  apply(compiler) {
+    const pluginName = 'test';
+    compiler.hooks.thisCompilation.tap('test', (compilation) => {
+      compilation.hooks.normalModuleLoader.tap(pluginName, (lc, m) => {
+        console.log(`test`)
+      })
+      for (const chunk of compilation.chunks) {
+        const set = new Set();
+        set.add(RuntimeGlobals.returnExportsFromRuntime)
+        compilation.chunkGraph.addChunkRuntimeRequirements(chunk, set);
+      }
+
+      compilation.hooks.additionalChunkRuntimeRequirements.tap('test', (chunk, set) => {
+        console.log(`test: `)
+      })
+    })
   }
 }
 
