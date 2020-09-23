@@ -108,7 +108,7 @@ const mfe4Config = {
   ],
   exposes: {
     './CatalogItem': '../packages/nx-app/libs/shared/src/lib/item-page/item-page.component.ts',
-    './YourFavorites': '../packages/nx-app/libs/shared/src/lib/your-favorites/your-favorites.component.ts',
+    './YourFavorites': '../packages/nx-app/apps/nx-app/src/app/your-favorites/your-favorites.component.ts',
   }
 };
 
