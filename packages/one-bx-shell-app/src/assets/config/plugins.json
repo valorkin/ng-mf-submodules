@@ -64,6 +64,20 @@
     "scope": "Page",
     "category": "main",
     "hasRoutes": false
+  },
+  {
+    "id": "contentItem.counter",
+    "provider": "Ariba",
+    "version": "0.0.1",
+    "remoteEntry": "http://localhost:4205/remoteEntry.js",
+    "remoteName": "ngrxApp",
+    "remoteRoute": "calc",
+    "exposedModule": "./Counter",
+    "displayName": "CounterComponent",
+    "componentName": "CounterComponent",
+    "scope": "Page",
+    "category": "main",
+    "hasRoutes": false
   }
 ]
 

@@ -26,8 +26,14 @@
   </fd-layout-panel>
 
   <fd-layout-panel fdLayoutGridSpan [columnSpan]="1">
-    <fd-layout-panel-body >
+    <fd-layout-panel-body>
       <fds-plugin-laucher id="contentItem.yourFavorite"></fds-plugin-laucher>
+    </fd-layout-panel-body>
+  </fd-layout-panel>
+
+  <fd-layout-panel fdLayoutGridSpan [columnSpan]="2">
+    <fd-layout-panel-body>
+      <a routerLink="/calc">Navigate to calculation component</a>
     </fd-layout-panel-body>
   </fd-layout-panel>
 </fd-layout-grid>

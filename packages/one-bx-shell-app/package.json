@@ -22,6 +22,7 @@
     "@angular/router": "^10.1.1",
     "@fundamental-ngx/app-shell": "0.2.14",
     "@fundamental-ngx/core": "^0.21.4",
+    "@ngrx/store": "^10.0.0",
     "@pscoped/ngx-pub-sub": "3.0.0",
     "@sap-theming/theming-base-content": "11.1.20",
     "concurrently": "^5.2.0",
