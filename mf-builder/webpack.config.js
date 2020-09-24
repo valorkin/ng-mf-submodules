@@ -95,6 +95,25 @@ const mfe3Config = {
   }
 };
 
+const mfe5Config = {
+  projectName: 'ngrx-app',
+  name: 'ngrxApp',
+  port: 4205,
+  publicPath: 'http://localhost:4205/',
+  projectRoot: '../packages/ngrx-app',
+  entryModule: '../packages/ngrx-app/src/app/app.module#AppModule',
+  shared: [
+    sharedDep('@angular/core'),
+    sharedDep('@angular/common'),
+    sharedDep('@angular/router'),
+    sharedDep('@fundamental-ngx/core'),
+    sharedDep('@fundamental-ngx/app-shell')
+  ],
+  exposes: {
+    './Counter': '../packages/ngrx-app/src/app/counter/counter.component.ts',
+  }
+};
+
 
 function fromNgConfig(projectConfig = {}, pathToConfig = './angular.json',) {
   const ngConfig = _loadNgConfig(pathToConfig);
@@ -186,6 +205,7 @@ module.exports = [
   fromNgConfig(mfe1Config, '../packages/content-req-app/angular.json'),
   fromNgConfig(mfe2Config, '../packages/content-item-app/angular.json'),
   fromNgConfig(mfe3Config, '../packages/content-recommended-categories/angular.json'),
+  // fromNgConfig(mfe5Config, '../packages/ngrx-app/angular.json'),
   fromNgConfig(shellConfig, '../packages/one-bx-shell-app/angular.json'),
 ];
 
