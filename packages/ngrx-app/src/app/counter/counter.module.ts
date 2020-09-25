@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CounterRoutingModule } from './counter-routing.module';
 import { CounterComponent } from './counter.component';
+import { CounterChildComponent } from './counter-child/counter-child.component';
 
 
 @NgModule({
   declarations: [
-    CounterComponent
+    CounterComponent,
+    CounterChildComponent
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { select, Store } from '@ngrx/store';
+import { select, Store, StoreModule } from '@ngrx/store';
 
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -10,14 +10,38 @@ import { decrement, increment } from '../store/actions';
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
-  providers: []
-  // styleUrls: ['./counter.component.css']
+  providers: [
+    StoreModule.forRoot(reducers, {}).providers
+  ],
+  styles: [`
+    .counter-container {
+      width: 100%;
+      display: flex;
+    }
+
+    .counter {
+      width: 40%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .title {
+      margin-right: 15px;
+    }
+
+    .buttons {
+      display: flex;
+      width: 15%;
+      justify-content: space-between;
+    }
+  `]
 })
 export class CounterComponent {
   count$: Observable<number>;
 
-  constructor(private readonly store: Store<AppState>) {
-    this.store.addReducer('counter', reducers.counter)
+  constructor(
+    private readonly store: Store<AppState>
+  ) {
     this.count$ = store.pipe(
       select(selectCounterState),
       map((state: any) => state.counter));

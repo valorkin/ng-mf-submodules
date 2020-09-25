@@ -1,17 +1,15 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-import {IconModule, LayoutGridModule, LayoutPanelModule, LinkModule} from '@fundamental-ngx/core';
+import { IconModule, LayoutGridModule, LayoutPanelModule, LinkModule } from '@fundamental-ngx/core';
 
-import {AppComponent} from './app.component';
-import {APP_ROUTES} from './app.routes';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {AppShellModule} from '@fundamental-ngx/app-shell';
-import {HttpClientModule} from '@angular/common/http';
-import {LandingComponent} from './landing/landing.component';
-import { StoreModule } from '@ngrx/store';
-
+import { AppComponent } from './app.component';
+import { APP_ROUTES } from './app.routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppShellModule } from '@fundamental-ngx/app-shell';
+import { HttpClientModule } from '@angular/common/http';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   imports: [
@@ -20,8 +18,7 @@ import { StoreModule } from '@ngrx/store';
     HttpClientModule,
     IconModule, LayoutGridModule, LayoutPanelModule, LinkModule,
     BrowserAnimationsModule,
-    AppShellModule.forRoot('assets/config/plugins.json'),
-    StoreModule.forRoot({})
+    AppShellModule.forRoot('assets/config/plugins.json')
   ],
   declarations: [
     AppComponent,

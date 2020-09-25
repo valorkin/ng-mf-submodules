@@ -1,7 +1,19 @@
-<div>
-  <input type="text"
-         [value]="count$ | async">
+<div class="counter-container">
 
-  <button (click)="decrement()">-</button>
-  <button (click)="increment()">+</button>
+  <div class="counter">
+
+    <div>
+      <span class="title">Parent Counter:</span>
+      <input type="text"
+             [value]="count$ | async">
+    </div>
+
+    <div class="buttons">
+      <button (click)="decrement()">-</button>
+      <button (click)="increment()">+</button>
+    </div>
+  </div>
+
 </div>
+
+<app-counter-child></app-counter-child>

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CounterModule } from './counter/counter.module';
-import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -11,10 +10,10 @@ import { StoreModule } from '@ngrx/store';
   ],
   imports: [
     BrowserModule,
-    CounterModule,
-    StoreModule.forRoot({})
+    CounterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
