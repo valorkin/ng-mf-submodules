@@ -66,6 +66,19 @@
     "hasRoutes": false
   },
   {
+    "id": "nx.yourFavorite",
+    "provider": "Ariba",
+    "version": "0.0.1",
+    "remoteEntry": "http://localhost:4204/remoteEntry.js",
+    "remoteName": "nxApp",
+    "exposedModule": "./YourFavorites",
+    "displayName": "NxComponent",
+    "componentName": "YourFavoritesComponent",
+    "scope": "Page",
+    "category": "main",
+    "hasRoutes": false
+  },
+  {
     "id": "contentItem.counter",
     "provider": "Ariba",
     "version": "0.0.1",
