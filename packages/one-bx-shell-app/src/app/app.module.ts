@@ -10,7 +10,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppShellModule} from '@fundamental-ngx/app-shell';
 import {HttpClientModule} from '@angular/common/http';
 import {LandingComponent} from './landing/landing.component';
-import { reducers } from '../../../ngrx-app/src/app/store/app.states';
 import { StoreModule } from '@ngrx/store';
 
 
@@ -22,7 +21,7 @@ import { StoreModule } from '@ngrx/store';
     IconModule, LayoutGridModule, LayoutPanelModule, LinkModule,
     BrowserAnimationsModule,
     AppShellModule.forRoot('assets/config/plugins.json'),
-    StoreModule.forRoot(reducers, {})
+    StoreModule.forRoot({})
   ],
   declarations: [
     AppComponent,
