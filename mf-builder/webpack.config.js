@@ -21,6 +21,7 @@ const shellConfig = {
     contentItemApp: 'contentItemApp@http://localhost:4202/remoteEntry.js',
     contentRecommendedCategories: 'contentRecommendedCategories@http://localhost:4203/remoteEntry.js',
     nxApp: 'nxApp@http://localhost:4204/remoteEntry.js',
+    ngrxApp: 'ngrxApp@http://localhost:4205/remoteEntry.js'
   },
   name: 'oneBxShellApp',
   port: 4200,
@@ -32,7 +33,8 @@ const shellConfig = {
     sharedDep('@angular/common'),
     sharedDep('@angular/router'),
     sharedDep('@fundamental-ngx/core'),
-    sharedDep('@fundamental-ngx/app-shell')
+    sharedDep('@fundamental-ngx/app-shell'),
+    sharedDep('@ngrx/store')
   ],
   exposes: {}
 };
@@ -116,6 +118,25 @@ const mfe4Config = {
   }
 };
 
+const mfe5Config = {
+  projectName: 'ngrx-app',
+  name: 'ngrxApp',
+  port: 4205,
+  publicPath: 'http://localhost:4205/',
+  projectRoot: '../packages/ngrx-app',
+  entryModule: '../packages/ngrx-app/src/app/app.module#AppModule',
+  shared: [
+    sharedDep('@angular/core'),
+    sharedDep('@angular/common'),
+    sharedDep('@angular/router'),
+    sharedDep('@fundamental-ngx/core'),
+    sharedDep('@fundamental-ngx/app-shell'),
+    sharedDep('@ngrx/store')
+  ],
+  exposes: {
+    './Counter': '../packages/ngrx-app/src/app/counter/counter.component.ts',
+  }
+};
 
 function fromNgConfig(projectConfig = {}, pathToConfig = './angular.json',) {
   const ngConfig = _loadNgConfig(pathToConfig);
@@ -208,6 +229,7 @@ module.exports = [
   fromNgConfig(mfe2Config, '../packages/content-item-app/angular.json'),
   fromNgConfig(mfe3Config, '../packages/content-recommended-categories/angular.json'),
   fromNgConfig(mfe4Config, '../packages/nx-app/angular.json'),
+  fromNgConfig(mfe5Config, '../packages/ngrx-app/angular.json'),
   fromNgConfig(shellConfig, '../packages/one-bx-shell-app/angular.json'),
 ];
 
