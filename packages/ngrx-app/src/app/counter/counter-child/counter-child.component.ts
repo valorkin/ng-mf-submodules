@@ -7,10 +7,10 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-counter-child',
   templateUrl: './counter-child.component.html',
+  styleUrls: ['./counter.component.scss'],
   providers: [
     StoreModule.forFeature('counter', reducers.counter).providers
-  ],
-  // styleUrls: ['./counter-child.component.css']
+  ]
 })
 export class CounterChildComponent {
   count$: Observable<number>;
@@ -22,5 +22,4 @@ export class CounterChildComponent {
       select(selectCounterState),
       map((state: any) => state.counter));
   }
-
 }
