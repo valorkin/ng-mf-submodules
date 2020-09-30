@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-counter-child',
   templateUrl: './counter-child.component.html',
-  styleUrls: ['./counter.component.scss'],
+  styleUrls: ['./counter-child.component.scss'],
   providers: [
     StoreModule.forFeature('counter', reducers.counter).providers
   ]
