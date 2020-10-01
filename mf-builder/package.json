@@ -7,7 +7,7 @@
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "resolutions": {
-    "webpack": "5.0.0-rc.1"
+    "webpack": "5.0.0-rc.3"
   },
   "private": true,
   "dependencies": {
@@ -31,23 +31,23 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/architect": "file:libs/_angular-devkit_architect.tgz",
-    "@angular-devkit/architect-cli": "file:libs/_angular-devkit_architect-cli.tgz",
-    "@angular-devkit/build-angular": "file:libs/_angular-devkit_build-angular.tgz",
-    "@angular-devkit/build-ng-packagr": "file:libs/_angular-devkit_build-ng-packagr.tgz",
-    "@angular-devkit/build-optimizer": "file:libs/_angular-devkit_build-optimizer.tgz",
-    "@angular-devkit/build-webpack": "file:libs/_angular-devkit_build-webpack.tgz",
-    "@angular-devkit/core": "file:libs/_angular-devkit_core.tgz",
-    "@angular-devkit/schematics": "file:libs/_angular-devkit_schematics.tgz",
-    "@angular-devkit/schematics-cli": "file:libs/_angular-devkit_schematics-cli.tgz",
-    "@angular/cli": "file:libs/_angular_cli.tgz",
+    "@angular-devkit/architect": "0.1100.0-next.4",
+    "@angular-devkit/architect-cli": "0.1100.0-next.4",
+    "@angular-devkit/build-angular": "0.1100.0-next.4",
+    "@angular-devkit/build-ng-packagr": "^0.1100.0-next.4",
+    "@angular-devkit/build-optimizer": "^0.1100.0-next.4",
+    "@angular-devkit/build-webpack": "^0.1100.0-next.4",
+    "@angular-devkit/core": "^11.0.0-next.4",
+    "@angular-devkit/schematics": "^11.0.0-next.4",
+    "@angular-devkit/schematics-cli": "^0.1100.0-next.4",
+    "@angular/cli": "^11.0.0-next.4",
     "@angular/compiler-cli": "^10.1.1",
     "@angular/language-service": "^10.1.1",
-    "@angular/pwa": "file:libs/_angular_pwa.tgz",
-    "@ngtools/webpack": "file:libs/_ngtools_webpack.tgz",
-    "@schematics/angular": "file:libs/_schematics_angular.tgz",
-    "@schematics/schematics": "file:libs/_schematics_schematics.tgz",
-    "@schematics/update": "file:libs/_schematics_update.tgz",
+    "@angular/pwa": "^0.1100.0-next.4",
+    "@ngtools/webpack": "^11.0.0-next.4",
+    "@schematics/angular": "^11.0.0-next.4",
+    "@schematics/schematics": "^0.1100.0-next.4",
+    "@schematics/update": "^0.1100.0-next.4",
     "@types/jasmine": "^3.5.11",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.12.47",
