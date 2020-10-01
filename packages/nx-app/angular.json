@@ -22,7 +22,7 @@
             "tsConfig": "apps/nx-app/tsconfig.app.json",
             "aot": true,
             "assets": ["apps/nx-app/src/favicon.ico", "apps/nx-app/src/assets"],
-            "styles": ["apps/nx-app/src/styles.css"],
+            "styles": ["apps/nx-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {

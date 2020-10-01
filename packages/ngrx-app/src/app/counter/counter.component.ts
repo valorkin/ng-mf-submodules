@@ -10,31 +10,10 @@ import { decrement, increment } from '../store/actions';
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
+  styleUrls: ['./counter.component.scss'],
   providers: [
     StoreModule.forRoot(reducers, {}).providers
-  ],
-  styles: [`
-    .counter-container {
-      width: 100%;
-      display: flex;
-    }
-
-    .counter {
-      width: 40%;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .title {
-      margin-right: 15px;
-    }
-
-    .buttons {
-      display: flex;
-      width: 15%;
-      justify-content: space-between;
-    }
-  `]
+  ]
 })
 export class CounterComponent {
   count$: Observable<number>;

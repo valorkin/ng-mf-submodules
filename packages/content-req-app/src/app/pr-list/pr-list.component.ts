@@ -25,6 +25,7 @@ import {
 @Component({
   selector: 'app-pr-list',
   templateUrl: './pr-list.component.html',
+  styleUrls: ['./pr-list.component.scss']
 })
 export class PrListComponent implements OnInit, PluginComponent {
   tableRows: any[];

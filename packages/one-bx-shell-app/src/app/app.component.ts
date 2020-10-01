@@ -1,32 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: [
-      `
-      .note {
-        position: absolute;
-        margin-top: -36px;
-        font-style: italic;
-        text-align: center;
-        width: 100%;
-        color: #ff5a1d;
-
-      }
-    `
-  ]
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-
-  constructor() {
-
-  }
-
-  ngOnInit(): void {
-
-  }
-
-
+export class AppComponent {
 }
 
