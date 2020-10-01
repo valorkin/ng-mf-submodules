@@ -4065,7 +4065,7 @@ engine.io@~3.2.0:
     engine.io-parser "~2.1.0"
     ws "~3.3.1"
 
-enhanced-resolve@5.2.0, enhanced-resolve@^5.1.0, enhanced-resolve@^5.2.0:
+enhanced-resolve@5.2.0, enhanced-resolve@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-5.2.0.tgz#3db3307a608f236f33aeea79303d32915792cbab"
   integrity sha512-NZlGLl8DxmZoq0uqPPtJfsCAir68uR047+Udsh1FH4+5ydGQdMurn/A430A1BtxASVmMEuS7/XiJ5OxJ9apAzQ==
@@ -6586,7 +6586,7 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-loader-runner@^4.0.0, loader-runner@^4.1.0:
+loader-runner@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-4.1.0.tgz#f70bc0c29edbabdf2043e7ee73ccc3fe1c96b42d"
   integrity sha512-oR4lB4WvwFoC70ocraKhn5nkKSs23t57h9udUgw8o0iH8hMXeEoRuUgfcvgUwAJ1ZpRqBvcou4N2SMvM1DwMrA==
@@ -10896,37 +10896,7 @@ webpack-virtual-modules@^0.2.2:
   dependencies:
     debug "^3.0.0"
 
-webpack@4.44.2, webpack@5.0.0-rc.2:
-  version "5.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.0.0-rc.2.tgz#ede6dbc767e77e21e2db50d73e97ec3a88499db2"
-  integrity sha512-5ZF3copE25r3WMKrQlo77hu2lNDSlZKBfdOLXi5Z3zdfC55DWki7+9sOwGOvhk+sgZjNncpi4YkEO0vpDVMhZg==
-  dependencies:
-    "@types/eslint-scope" "^3.7.0"
-    "@types/estree" "^0.0.45"
-    "@webassemblyjs/ast" "1.9.0"
-    "@webassemblyjs/helper-module-context" "1.9.0"
-    "@webassemblyjs/wasm-edit" "1.9.0"
-    "@webassemblyjs/wasm-parser" "1.9.0"
-    acorn "^7.4.0"
-    browserslist "^4.14.3"
-    chrome-trace-event "^1.0.2"
-    enhanced-resolve "^5.1.0"
-    eslint-scope "^5.1.0"
-    events "^3.2.0"
-    glob-to-regexp "^0.4.1"
-    graceful-fs "^4.2.4"
-    json-parse-better-errors "^1.0.2"
-    loader-runner "^4.0.0"
-    mime-types "^2.1.27"
-    neo-async "^2.6.2"
-    pkg-dir "^4.2.0"
-    schema-utils "^2.7.0"
-    tapable "^2.0.0"
-    terser-webpack-plugin "^4.1.0"
-    watchpack "^2.0.0"
-    webpack-sources "^2.0.1"
-
-webpack@^5.0.0-rc.0:
+webpack@4.44.2, webpack@5.0.0-rc.3, webpack@^5.0.0-rc.0:
   version "5.0.0-rc.3"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.0.0-rc.3.tgz#534afa7ef8b54c62ea393492dfa2e05b4491d773"
   integrity sha512-z07btJiDKZjtbHz1d/jbWBw+cV+ZEAIDZx/rHGJIj2I1jC/zWg0TxH0wg33v9GSVGTkVo48KcQ4AM5QnpN0yYQ==

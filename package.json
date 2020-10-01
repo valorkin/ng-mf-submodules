@@ -11,7 +11,7 @@
     "serve": "npm run serve:dist --prefix mf-builder",
     "postinstall": "lerna bootstrap && npm run inst:builder",
     "lerna": "lerna",
-    "inst:builder": "yarn install --cwd mf-builder"
+    "inst:builder": "yarn --cwd mf-builder"
   },
   "repository": {
     "type": "git",

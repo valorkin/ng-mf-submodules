@@ -246,7 +246,6 @@ function webpackStylesConfig(pathToConfig){
       "aot": true,
       "assets": [],
       "styles": [
-        "src/styles.css"
       ],
       "scripts": [],
       "stylePreprocessorOptions": {
