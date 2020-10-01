@@ -145,7 +145,7 @@ function fromNgConfig(projectConfig = {}, pathToConfig = './angular.json',) {
     throw new Error(`Incorrect project name "${projectName}" in "${pathToConfig}"`);
   }
   const conf1 = _configTemplate(ngConfig.projects[projectName], projectConfig);
-  const conf2 = webpackStylesConfig();
+  const conf2 = webpackStylesConfig(pathToConfig);
   const merged = webpackMerge(conf1, conf2);
   const _test = Object.create(merged);
   return merged;
@@ -233,9 +233,10 @@ module.exports = [
   fromNgConfig(shellConfig, '../packages/one-bx-shell-app/angular.json'),
 ];
 
-function webpackStylesConfig(){
+function webpackStylesConfig(pathToConfig){
+  const root = path.resolve(path.parse(pathToConfig).dir)
   const wco = {
-    root: '/home/valorkin/work/sap/sap-ng-mf/packages/content-item-app',
+    root,
     buildOptions: {
       "outputPath": "dist/content-item-app",
       "index": "src/index.html",
