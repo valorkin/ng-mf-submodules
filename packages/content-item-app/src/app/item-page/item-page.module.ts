@@ -1,9 +1,9 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {ItemPageComponent} from './item-page.component';
-import {RouterModule} from '@angular/router';
-import {BreadcrumbModule, ButtonModule, ImageModule/*, StepInputModule*/} from '@fundamental-ngx/core';
-import {ItemPageRoutingModule} from './item-page-routing.module';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ItemPageComponent } from './item-page.component';
+import { RouterModule } from '@angular/router';
+import { BreadcrumbModule, ButtonModule, ImageModule/*, StepInputModule*/ } from '@fundamental-ngx/core';
+import { ItemPageRoutingModule } from './item-page-routing.module';
 import { TabsModule } from '@fundamental-ngx/core';
 
 
@@ -14,7 +14,7 @@ import { TabsModule } from '@fundamental-ngx/core';
     BreadcrumbModule,
     ItemPageRoutingModule,
     ButtonModule,
-    TabsModule,
+    TabsModule
     // StepInputModule
   ],
   declarations: [
@@ -23,7 +23,7 @@ import { TabsModule } from '@fundamental-ngx/core';
   exports: [
     RouterModule,
     ItemPageComponent
-  ],
+  ]
 })
 export class ItemPageModule {
 }

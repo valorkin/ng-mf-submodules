@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppShellModule } from '@fundamental-ngx/app-shell';
 import { HttpClientModule } from '@angular/common/http';
 import { LandingComponent } from './landing/landing.component';
+import { IframeLandingComponent } from './iframe-landing/iframe-landing.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { LandingComponent } from './landing/landing.component';
   ],
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
+    IframeLandingComponent
   ],
   bootstrap: [AppComponent]
 })
