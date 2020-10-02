@@ -1,5 +1,45 @@
+<link [href]="_cssUrl" rel="stylesheet"/>
 <fds-app>
-  <fds-app-header title="One Procurement">
+  <fds-app-header>
+    <fd-shellbar>
+      <fd-shellbar-logo>
+        <a aria-label="SAP" class="fd-shellbar__logo fd-shellbar__logo--image-replaced" href="#"></a>
+      </fd-shellbar-logo>
+      <fd-product-menu [closePopoverOnSelect]="true" [control]="productMenuControl" [items]="productMenuItems">
+      </fd-product-menu>
+      <fd-shellbar-subtitle>
+        Subtitle
+      </fd-shellbar-subtitle>
+      <fd-shellbar-actions [userMenu]="userMenu" [user]="user">
+        <fd-shellbar-action
+          *ngFor="let action of actions"
+          [callback]="action.callback"
+          [glyph]="action.glyph"
+          [label]="action.label"
+          [notificationCount]="action.notificationCount"
+          [notificationLabel]="action.notificationLabel"
+        >
+        </fd-shellbar-action>
+
+        <button [fdMenuTrigger]="themesMenu"
+                [fdMenu]="true"
+                class="fd-shellbar__button--menu fd-docs--theme-menu"
+                fd-button
+                fdType="transparent"
+                glyph="palette">
+        </button>
+
+        <fd-menu #themesMenu
+                 [fillControlMode]="null"
+                 placement="bottom-end">
+          <li *ngFor="let theme of themes" fd-menu-item>
+            <div (click)="onSelectTheme(theme.id, theme.name)" fd-menu-interactive>
+              <span fd-menu-title>{{ theme.name }}</span>
+            </div>
+          </li>
+        </fd-menu>
+      </fd-shellbar-actions>
+    </fd-shellbar>
   </fds-app-header>
 
   <fds-app-content>
@@ -10,6 +50,9 @@
     Copyright © 1996-2020 Ariba, Inc.
   </fds-app-footer>
 </fds-app>
+
+
+
 
 
 
