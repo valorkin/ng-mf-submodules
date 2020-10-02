@@ -1,12 +1,12 @@
 <fd-breadcrumb>
   <fd-breadcrumb-item>
-    <a fd-breadcrumb-link [routerLink]="'#'">IT hardware and software </a>
+    <a [routerLink]="'#'" fd-breadcrumb-link>IT hardware and software </a>
   </fd-breadcrumb-item>
   <fd-breadcrumb-item>
-    <a fd-breadcrumb-link [routerLink]="'#'">All laptops</a>
+    <a [routerLink]="'#'" fd-breadcrumb-link>All laptops</a>
   </fd-breadcrumb-item>
   <fd-breadcrumb-item>
-    <a fd-breadcrumb-link [routerLink]="'#'" [queryParams]="'#'">Apple</a>
+    <a [queryParams]="'#'" [routerLink]="'#'" fd-breadcrumb-link>Apple</a>
   </fd-breadcrumb-item>
   <fd-breadcrumb-item>
     <span>Breadcrumb Level 4</span>
@@ -40,7 +40,7 @@
     </ul>
 
     <div class="actions">
-      <button fd-button [fdType]="'emphasized'">Add to cart</button>
+      <button (click)="onAddToCard($event)" [fdType]="'emphasized'" fd-button>Add to cart</button>
     </div>
   </div>
 </div>
@@ -70,7 +70,7 @@
 <ng-template #tabContent let-tabIndex>
 
   <div class="tab-content">
-      This is Content For tabs {{tabIndex}}
+    This is Content For tabs {{tabIndex}}
   </div>
 
 </ng-template>
