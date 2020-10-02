@@ -9,6 +9,7 @@ import { APP_ROUTES } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppShellModule } from '@fundamental-ngx/app-shell';
 import { HttpClientModule } from '@angular/common/http';
+import { IframeLauncherComponent } from './iframe-launcher/iframe-launcher.component';
 import { LandingComponent } from './landing/landing.component';
 import { IframeLandingComponent } from './iframe-landing/iframe-landing.component';
 
@@ -24,7 +25,8 @@ import { IframeLandingComponent } from './iframe-landing/iframe-landing.componen
   declarations: [
     AppComponent,
     LandingComponent,
-    IframeLandingComponent
+    IframeLandingComponent,
+    IframeLauncherComponent
   ],
   bootstrap: [AppComponent]
 })

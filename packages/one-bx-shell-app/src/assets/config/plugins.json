@@ -1,5 +1,65 @@
 [
   {
+    "id": "contentReq",
+    "provider": "Ariba",
+    "version": "1.0.1",
+    "host": "http://localhost:4201",
+    "components": {
+      "prlist": {
+        "name": "PrListComponent",
+        "module": "./PrList",
+        "entry": "/remoteEntry.js",
+        "iframe": "/index.html",
+        "scope": "Page",
+        "category": "main",
+        "hasRoutes": false
+      },
+      "testCobra": {
+        "name": "DownloadComponent",
+        "module": "./Download",
+        "entry": "/remoteEntry.js",
+        "iframe": "/index.html",
+        "scope": "Page",
+        "category": "main",
+        "hasRoutes": false
+      }
+    }
+  },
+  {
+    "id": "contentItem",
+    "provider": "Ariba",
+    "version": "0.0.1",
+    "host": "http://localhost:4203",
+    "components": {
+      "recommendedCategories": {
+        "name": "RecommendedCategoriesComponent",
+        "module": "./RecommendedCategories",
+        "entry": "/remoteEntry.js",
+        "iframe": "/index.html",
+        "scope": "Page",
+        "category": "main",
+        "hasRoutes": false
+      }
+    }
+  },
+  {
+    "id": "contentItem2",
+    "provider": "Ariba",
+    "version": "0.0.1",
+    "host": "http://localhost:4202",
+    "components": {
+      "yourFavorite": {
+        "name": "YourFavoritesComponent",
+        "module": "./YourFavorites",
+        "entry": "/remoteEntry.js",
+        "iframe": "/index.html",
+        "scope": "Page",
+        "category": "main",
+        "hasRoutes": false
+      }
+    }
+  },
+  {
     "id": "contentReq.testCobra",
     "provider": "Ariba",
     "version": "1.0.1",

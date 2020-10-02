@@ -1,13 +1,10 @@
 <fd-layout-grid [col]="6">
   <fd-layout-panel fdLayoutGridSpan [columnSpan]="4">
     <fd-layout-panel-body>
-<!--      <fds-plugin-laucher id="contentReq.prList"></fds-plugin-laucher>-->
-      <iframe src="http://localhost:4201/index.html"
-              frameborder="0"
-              width="100%"
-              height="350px"
-              id="contentReq.prList">
-      </iframe>
+      <fds-iframe-launcher
+        app="contentReq" component="prlist"
+        [attrs]="{frameborder:0, width: '100%', height: '350px'}"
+      ></fds-iframe-launcher>
     </fd-layout-panel-body>
   </fd-layout-panel>
   <fd-layout-panel fdLayoutGridSpan [columnSpan]="2">
@@ -28,42 +25,18 @@
   </fd-layout-panel>
 
   <fd-layout-panel fdLayoutGridSpan [columnSpan]="5">
-<!--    <fds-plugin-laucher id="contentItem.recommendedCategories"></fds-plugin-laucher>-->
-    <iframe src="http://localhost:4203/index.html"
-            frameborder="0"
-            width="100%"
-            height="450px"
-            id="contentItem.recommendedCategories">
-    </iframe>
+    <fds-iframe-launcher
+      app="contentItem" component="recommendedCategories"
+      [attrs]="{frameborder:0, width: '100%', height: '450px'}"
+    ></fds-iframe-launcher>
+
   </fd-layout-panel>
 
   <fd-layout-panel fdLayoutGridSpan [columnSpan]="1">
     <fd-layout-panel-body>
-      <!--      <fds-plugin-laucher id="contentItem.yourFavorite"></fds-plugin-laucher>-->
-      <iframe src="http://localhost:4202/index.html"
-              frameborder="0"
-              id="contentItem.yourFavorite"
-              width="258px"
-              height="450px">
-      </iframe>
+      <fds-iframe-launcher
+        app="contentItem2" component="yourFavorite"
+        [attrs]="{frameborder:0, width: '258px', height: '450px'}"
+      ></fds-iframe-launcher>
     </fd-layout-panel-body>
   </fd-layout-panel>
-
-  <fd-layout-panel fdLayoutGridSpan [columnSpan]="1">
-    <fd-layout-panel-body>
-      <iframe id="nx.yourFavorite"
-              frameborder="0"
-              width="258px"
-              height="450px"
-              src="http://localhost:4204/index.html">
-      </iframe>
-<!--      <fds-plugin-laucher id="nx.yourFavorite"></fds-plugin-laucher>-->
-    </fd-layout-panel-body>
-  </fd-layout-panel>
-
-  <fd-layout-panel fdLayoutGridSpan [columnSpan]="2">
-    <fd-layout-panel-body>
-      <a routerLink="/calc">Navigate to calculation component</a>
-    </fd-layout-panel-body>
-  </fd-layout-panel>
-</fd-layout-grid>

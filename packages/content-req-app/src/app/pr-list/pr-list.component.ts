@@ -12,20 +12,17 @@ import {
 /**
  * Should we have interface or crete custom decorator
  *
- *
+ * ```ts
  * @PluginComponent({
  *   configuration: PrListPluginConfiguration
- *
- *
  * })
- *
+ * ```
  * but then I still want to initialize ?
  *
  */
 @Component({
   selector: 'app-pr-list',
   templateUrl: './pr-list.component.html',
-  styleUrls: ['./pr-list.component.scss']
 })
 export class PrListComponent implements OnInit, PluginComponent {
   tableRows: any[];
