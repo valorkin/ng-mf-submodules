@@ -91,6 +91,19 @@
     "scope": "Page",
     "category": "main",
     "hasRoutes": false
+  },
+  {
+    "name": "authApp.login",
+    "provider": "Ariba",
+    "version": "0.0.1",
+    "framework": "legacy",
+    "remoteEntry": "http://localhost:4206/remoteEntry.js",
+    "remoteName": "authApp",
+    "exposedModule": "./Login",
+    "componentName": "elementName",
+    "scope": "Page",
+    "category": "main",
+    "hasRoutes": false
   }
 ]
 

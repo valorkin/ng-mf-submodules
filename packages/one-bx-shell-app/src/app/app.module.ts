@@ -18,6 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {LandingComponent} from './landing/landing.component';
 import {FormsModule} from '@angular/forms';
 import {IFrameLauncherComponent} from './components/iframe-launcher/iframe-launcher.component';
+import {PluginLauncherComponent} from './components/plugin-launcher/plugin-launcher.component';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import {IFrameLauncherComponent} from './components/iframe-launcher/iframe-launc
   declarations: [
     AppComponent,
     LandingComponent,
-    IFrameLauncherComponent
+    IFrameLauncherComponent,
+    PluginLauncherComponent
   ],
   bootstrap: [AppComponent]
 })
