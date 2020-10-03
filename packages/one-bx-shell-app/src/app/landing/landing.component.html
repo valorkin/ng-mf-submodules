@@ -6,18 +6,11 @@
   </fd-layout-panel>
   <fd-layout-panel [columnSpan]="2" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <h4>Quick Links</h4>
-      <hr/>
-      <a fd-link href="">
-        <fd-icon [size]="'s'" glyph="activity-items"></fd-icon>
-        Request Non-catalog Item</a><br/><br/>
+      <fds-iframe-launcher id="landing-legacy1" title="links from external system"
+                           height="210px"
+                           url="http://localhost:5400">
 
-      <a fd-link href="">
-        <fd-icon [size]="'s'" glyph="batch-payments"></fd-icon>
-        Request By Plant</a><br/><br/>
-      <a fd-link href="">
-        <fd-icon [size]="'s'" glyph="cart"></fd-icon>
-        Create Project</a><br/><br/>
+      </fds-iframe-launcher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 

@@ -17,6 +17,7 @@ import {AppShellModule} from '@fundamental-ngx/app-shell';
 import {HttpClientModule} from '@angular/common/http';
 import {LandingComponent} from './landing/landing.component';
 import {FormsModule} from '@angular/forms';
+import {IFrameLauncherComponent} from './components/iframe-launcher/iframe-launcher.component';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import {FormsModule} from '@angular/forms';
   ],
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
+    IFrameLauncherComponent
   ],
   bootstrap: [AppComponent]
 })
