@@ -1,45 +1,44 @@
 <fd-layout-grid [col]="6">
-  <fd-layout-panel fdLayoutGridSpan [columnSpan]="4">
+  <fd-layout-panel [columnSpan]="4" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <fds-plugin-laucher id="contentReq.prList"></fds-plugin-laucher>
+      <fds-plugin-laucher name="contentReq.prList"></fds-plugin-laucher>
     </fd-layout-panel-body>
   </fd-layout-panel>
-  <fd-layout-panel fdLayoutGridSpan [columnSpan]="2">
+  <fd-layout-panel [columnSpan]="2" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <h4>Quick Links</h4>
-      <hr/>
-      <a href="" fd-link>
-        <fd-icon glyph="activity-items" [size]="'s'"></fd-icon>
-        Request Non-catalog Item</a><br/><br/>
+      <fds-iframe-launcher id="landing-legacy1" title="links from external system"
+                           height="210px"
+                           url="http://localhost:5400">
 
-      <a href="" fd-link>
-        <fd-icon glyph="batch-payments" [size]="'s'"></fd-icon>
-        Request By Plant</a><br/><br/>
-      <a href="" fd-link>
-        <fd-icon glyph="cart" [size]="'s'"></fd-icon>
-        Create Project</a><br/><br/>
+      </fds-iframe-launcher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 
-  <fd-layout-panel fdLayoutGridSpan [columnSpan]="5">
-    <fds-plugin-laucher id="contentItem.recommendedCategories"></fds-plugin-laucher>
+  <fd-layout-panel [columnSpan]="5" fdLayoutGridSpan>
+    <app-plugin-laucher name="contentItem.recommendedCategories"></app-plugin-laucher>
   </fd-layout-panel>
 
-  <fd-layout-panel fdLayoutGridSpan [columnSpan]="1">
+  <fd-layout-panel [columnSpan]="1" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <fds-plugin-laucher id="contentItem.yourFavorite"></fds-plugin-laucher>
+      <fds-plugin-laucher name="contentItem.yourFavorite"></fds-plugin-laucher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 
-  <fd-layout-panel fdLayoutGridSpan [columnSpan]="1">
+  <fd-layout-panel [columnSpan]="1" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <fds-plugin-laucher id="nx.yourFavorite"></fds-plugin-laucher>
+      <fds-plugin-laucher name="nx.yourFavorite"></fds-plugin-laucher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 
-  <fd-layout-panel fdLayoutGridSpan [columnSpan]="2">
+  <fd-layout-panel [columnSpan]="2" fdLayoutGridSpan>
     <fd-layout-panel-body>
       <a routerLink="/calc">Navigate to calculation component</a>
+    </fd-layout-panel-body>
+  </fd-layout-panel>
+
+  <fd-layout-panel [columnSpan]="3" fdLayoutGridSpan>
+    <fd-layout-panel-body>
+      <app-plugin-laucher name="authApp.login"></app-plugin-laucher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 </fd-layout-grid>

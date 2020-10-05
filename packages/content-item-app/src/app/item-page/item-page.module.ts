@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ItemPageComponent } from './item-page.component';
 import { RouterModule } from '@angular/router';
-import { BreadcrumbModule, ButtonModule, ImageModule/*, StepInputModule*/ } from '@fundamental-ngx/core';
+import { BreadcrumbModule, ButtonModule, ImageModule, TabsModule } from '@fundamental-ngx/core';
 import { ItemPageRoutingModule } from './item-page-routing.module';
-import { TabsModule } from '@fundamental-ngx/core';
-
+import { AppShellModule } from '@fundamental-ngx/app-shell';
 
 @NgModule({
   imports: [
@@ -14,8 +13,8 @@ import { TabsModule } from '@fundamental-ngx/core';
     BreadcrumbModule,
     ItemPageRoutingModule,
     ButtonModule,
-    TabsModule
-    // StepInputModule
+    TabsModule,
+    AppShellModule
   ],
   declarations: [
     ItemPageComponent

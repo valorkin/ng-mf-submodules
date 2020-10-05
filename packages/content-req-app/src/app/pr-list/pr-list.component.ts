@@ -5,7 +5,9 @@ import {
   Permission,
   PluginComponent,
   PluginConfiguration,
-  PluginContext
+  PluginContext,
+  TextMessage,
+  TopicPublisher
 } from '@fundamental-ngx/app-shell';
 
 
@@ -26,6 +28,7 @@ import {
 })
 export class PrListComponent implements OnInit, PluginComponent {
   tableRows: any[];
+  appEventPub: TopicPublisher<Message>;
 
   ngOnInit(): void {
     this.tableRows = [
@@ -61,11 +64,15 @@ export class PrListComponent implements OnInit, PluginComponent {
   }
 
   initialize(context: PluginContext): void {
-    console.log('Initializing Remote Component PrListComponent');
+    this.appEventPub = context.publisher('app:event');
   }
 
   getConfiguration(): Partial<PluginConfiguration> {
     return new PrListPluginConfiguration();
+  }
+
+  onItemClicked($event: MouseEvent, id: string) {
+    this.appEventPub.publish(new TextMessage('Hello from Pr List: ' + id))
   }
 }
 
@@ -80,7 +87,8 @@ export class PrListPluginConfiguration implements Partial<PluginConfiguration> {
   }
 
   addListeners(): Array<Listener> {
-    const themeChange = new Listener('Listening for Theming changes', 'theme:change',
+    const themeChange = new Listener('theme:change',
+      'Listening for Theming changes',
       (m: Message) => {
         console.log('@@@ PR-LIST: Theme changed to => ', m);
       });

@@ -60,25 +60,10 @@
     }
   },
   {
-    "id": "contentReq.testCobra",
-    "provider": "Ariba",
-    "version": "1.0.1",
-    "remoteEntry": "http://localhost:4201/remoteEntry.js",
-    "remoteHTML": "http://localhost:4201/index.html",
-    "remoteName": "contentReqApp",
-    "exposedModule": "./Download",
-    "displayName": "DownloadComponent",
-    "componentName": "DownloadComponent",
-    "scope": "Page",
-    "category": "main",
-    "hasRoutes": false
-  },
-  {
-    "id": "contentReq.prList",
+    "name": "contentReq.prList",
     "provider": "Ariba",
     "version": "0.0.1",
     "remoteEntry": "http://localhost:4201/remoteEntry.js",
-    "remoteHTML": "http://localhost:4201/index.html",
     "remoteName": "contentReqApp",
     "exposedModule": "./PrList",
     "displayName": "PurchaseRequisitionList",
@@ -88,11 +73,10 @@
     "hasRoutes": false
   },
   {
-    "id": "contentItem.yourFavorite",
+    "name": "contentItem.yourFavorite",
     "provider": "Ariba",
     "version": "0.0.1",
     "remoteEntry": "http://localhost:4202/remoteEntry.js",
-    "remoteHTML": "http://localhost:4202/index.html",
     "remoteName": "contentItemApp",
     "exposedModule": "./YourFavorites",
     "displayName": "YourFavoritesComponent",
@@ -102,11 +86,10 @@
     "hasRoutes": false
   },
   {
-    "id": "contentItem.catalogItem",
+    "name": "contentItem.catalogItem",
     "provider": "Ariba",
     "version": "0.0.1",
     "remoteEntry": "http://localhost:4202/remoteEntry.js",
-    "remoteHTML": "http://localhost:4202/index.html",
     "remoteName": "contentItemApp",
     "remoteRoute": "item-detail",
     "exposedModule": "./CatalogItem",
@@ -117,26 +100,10 @@
     "hasRoutes": false
   },
   {
-    "id": "contentItem.IframeCatalogItem",
-    "provider": "Ariba",
-    "version": "0.0.1",
-    "remoteEntry": "http://localhost:4202/remoteEntry.js",
-    "remoteHTML": "http://localhost:4202/index.html",
-    "remoteName": "contentIframeItemApp",
-    "remoteRoute": "iframe-item-detail",
-    "exposedModule": "./IframeItemPage",
-    "displayName": "IframeItemPageComponent",
-    "componentName": "IframeItemPageComponent",
-    "scope": "Page",
-    "category": "main",
-    "hasRoutes": false
-  },
-  {
-    "id": "contentItem.recommendedCategories",
+    "name": "contentItem.recommendedCategories",
     "provider": "Ariba",
     "version": "0.0.1",
     "remoteEntry": "http://localhost:4203/remoteEntry.js",
-    "remoteHTML": "http://localhost:4203/index.html",
     "remoteName": "contentRecommendedCategories",
     "exposedModule": "./RecommendedCategories",
     "displayName": "RecommendedCategoriesComponent",
@@ -146,11 +113,10 @@
     "hasRoutes": false
   },
   {
-    "id": "nx.yourFavorite",
+    "name": "nx.yourFavorite",
     "provider": "Ariba",
     "version": "0.0.1",
     "remoteEntry": "http://localhost:4204/remoteEntry.js",
-    "remoteHTML": "http://localhost:4204/index.html",
     "remoteName": "nxApp",
     "exposedModule": "./YourFavorites",
     "displayName": "NxComponent",
@@ -160,16 +126,28 @@
     "hasRoutes": false
   },
   {
-    "id": "contentItem.counter",
+    "name": "contentItem.counter",
     "provider": "Ariba",
     "version": "0.0.1",
     "remoteEntry": "http://localhost:4205/remoteEntry.js",
-    "remoteHTML": "http://localhost:4205/index.html",
     "remoteName": "ngrxApp",
     "remoteRoute": "calc",
     "exposedModule": "./Counter",
     "displayName": "CounterComponent",
     "componentName": "CounterComponent",
+    "scope": "Page",
+    "category": "main",
+    "hasRoutes": false
+  },
+  {
+    "name": "authApp.login",
+    "provider": "Ariba",
+    "version": "0.0.1",
+    "framework": "legacy",
+    "remoteEntry": "http://localhost:4206/remoteEntry.js",
+    "remoteName": "authApp",
+    "exposedModule": "./Login",
+    "componentName": "elementName",
     "scope": "Page",
     "category": "main",
     "hasRoutes": false

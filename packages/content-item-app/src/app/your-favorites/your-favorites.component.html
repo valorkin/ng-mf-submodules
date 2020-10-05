@@ -1,5 +1,5 @@
 <h4>Your favorite</h4>
-
+{{receivedTextFromOtherApp}}
 <hr/>
 
 <p class="prod-desc">
@@ -9,12 +9,12 @@
 </p>
 <div class="img-container">
 
-  <img style="margin-right: 10px;" width="200px" routerLink="/item-detail"
-       src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-select-2019-family?wid=882&amp;hei=1058&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1567022175704"/>
+  <img routerLink="/item-detail" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-select-2019-family?wid=882&amp;hei=1058&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1567022175704" style="margin-right: 10px;"
+       width="200px"/>
 </div>
 
 <div class="action-container">
-  <button fd-button [glyph]="'navigation-left-arrow'" aria-label="filter" title="filter"></button>
+  <button [glyph]="'navigation-left-arrow'" aria-label="filter" fd-button title="filter"></button>
   <span class="page-label">1 of 10</span>
-  <button fd-button [glyph]="'navigation-right-arrow'" aria-label="menu2" title="menu2"></button>
+  <button [glyph]="'navigation-right-arrow'" aria-label="menu2" fd-button title="menu2"></button>
 </div>

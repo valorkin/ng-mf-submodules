@@ -20,12 +20,14 @@
       true,
       "attribute",
       "app",
+      "fds",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
       "app",
+      "fds",
       "kebab-case"
     ],
     "eofline": true,
@@ -116,13 +118,7 @@
         }
       ]
     },
-    "variable-name": {
-      "options": [
-        "ban-keywords",
-        "check-format",
-        "allow-pascal-case"
-      ]
-    },
+    "variable-name": false,
     "whitespace": {
       "options": [
         "check-branch",
