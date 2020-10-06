@@ -31,7 +31,7 @@ interface MFAppConfiguration {
 }
 
 @Component({
-  selector: 'fds-iframe-launcher',
+  selector: 'fds-iframe-launcher2',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <iframe
@@ -86,7 +86,7 @@ export class IframeLauncherComponent implements OnChanges, AfterViewInit {
   private getIframeConfig(): any {
     const appConfig = this.lookupService
       // todo: valorkin: this configuration seems to be more appropriate
-      .lookup(new Map([['id', this.app]])) as unknown as { descriptor: MFAppConfiguration };
+      .lookup(new Map([['name', this.app]])) as unknown as { descriptor: MFAppConfiguration };
     const frameConfig = appConfig.descriptor.components[this.component];
     const iframeUrl = this.sanitizer
       .bypassSecurityTrustResourceUrl(`${appConfig.descriptor.host}${frameConfig.iframe}`);

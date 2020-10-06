@@ -1,6 +1,6 @@
 [
   {
-    "id": "contentReq",
+    "name": "contentReq",
     "provider": "Ariba",
     "version": "1.0.1",
     "host": "http://localhost:4201",
@@ -26,7 +26,7 @@
     }
   },
   {
-    "id": "contentItem",
+    "name": "contentItem",
     "provider": "Ariba",
     "version": "0.0.1",
     "host": "http://localhost:4203",
@@ -43,7 +43,7 @@
     }
   },
   {
-    "id": "contentItem2",
+    "name": "contentItem2",
     "provider": "Ariba",
     "version": "0.0.1",
     "host": "http://localhost:4202",
