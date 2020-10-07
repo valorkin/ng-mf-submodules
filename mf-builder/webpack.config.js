@@ -146,7 +146,6 @@ const mfe6Config = {
   port: 4206,
   publicPath: 'http://localhost:4206/',
   projectRoot: '../packages/webcomp-auth-app',
-
   shared: [
     "rxjs"
   ],
@@ -154,7 +153,6 @@ const mfe6Config = {
     './Login': '../packages/webcomp-auth-app/component',
   }
 };
-
 
 function fromNgConfig(projectConfig = {}, pathToConfig = './angular.json',) {
   const ngConfig = _loadNgConfig(pathToConfig);
