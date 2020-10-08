@@ -1,14 +1,17 @@
-<div class="my-page">
-  <h4>Quick Links</h4>
-  <hr/>
-  <a fd-link (click)="onAction($event, 'Request Non-catalog Item')">
-    <fd-icon size="s" glyph="activity-items"></fd-icon>
-    Request Non-catalog Item</a><br/><br/>
+<link *ngIf="themeSrc" [href]="themeSrc" rel="stylesheet"/>
+<div class="fd-has-display-block">
+  <fd-layout-panel-body>
+    <h4>Quick Links</h4>
+    <hr/>
+    <a fd-link (click)="onAction($event, 'Request Non-catalog Item')">
+      <fd-icon size="s" glyph="activity-items"></fd-icon>
+      Request Non-catalog Item</a><br/><br/>
 
-  <a fd-link href="">
-    <fd-icon size="s" glyph="batch-payments"></fd-icon>
-    Request By Plant</a><br/><br/>
-  <a fd-link href="">
-    <fd-icon size="s" glyph="cart"></fd-icon>
-    Create Project</a><br/><br/>
+    <a fd-link href="">
+      <fd-icon size="s" glyph="batch-payments"></fd-icon>
+      Request By Plant</a><br/><br/>
+    <a fd-link href="">
+      <fd-icon size="s" glyph="cart"></fd-icon>
+      Create Project</a><br/><br/>
+  </fd-layout-panel-body>
 </div>

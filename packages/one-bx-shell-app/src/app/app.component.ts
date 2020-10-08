@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ProductSwitchItem, ShellbarMenuItem, ShellbarUser, ShellbarUserMenu} from '@fundamental-ngx/core';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import {AppShellProviderService, Message} from '@fundamental-ngx/app-shell';
+import { ThemeProvider } from '../lib/theme.provider';
 
 @Component({
   selector: 'app-root',
@@ -162,6 +163,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this._cssUrl = this.sanitizer.bypassSecurityTrustResourceUrl('assets/theme/sap_fiori_3.css');
     this._appShell.themeManager.themeChanged(this.themes[0].id, this.themes[0].name);
+    ThemeProvider.setCurrentTheme({...this.themes[0], url: `${location.href}assets/theme/sap_fiori_3.css`});
   }
 
 
@@ -192,10 +194,11 @@ export class AppComponent implements OnInit {
   onSelectTheme(id: string, name: string): void {
     this._cssUrl = this.sanitizer.bypassSecurityTrustResourceUrl('assets/theme/' + id + '.css');
     this._appShell.themeManager.themeChanged(id, name);
+    ThemeProvider.changeTheme({id, name, url: `${location.href}assets/theme/${id}.css`});
   }
 
   onAppEvent(m: Message): void {
-    console.log('AppShell received => ', m)
+    console.log('AppShell received => ', m);
   }
 
 }
