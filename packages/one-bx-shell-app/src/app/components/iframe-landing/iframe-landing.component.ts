@@ -6,8 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./iframe-landing.component.scss']
 })
 export class IframeLandingComponent {
-
-  resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 20 + 'px';
-  }
 }
