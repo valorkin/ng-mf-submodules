@@ -8,7 +8,7 @@ import {
   ViewChild,
   AfterViewInit
 } from '@angular/core';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { LookupService } from '@fundamental-ngx/app-shell';
 
 interface MFFrameConfiguration {
@@ -39,7 +39,7 @@ interface MFAppConfiguration {
       #iframe
       class="responsive-wrapper"
       [style.minHeight]="attrs.height"
-      load="onLoad(iframe)"
+      (load)="onLoad(iframe)"
       *ngIf="iconfig?.src"
       [src]="iconfig.src"
     ></iframe>
@@ -54,8 +54,6 @@ export class IframeLauncherComponent implements OnChanges, AfterViewInit {
   @Input() component: string;
   @Input() attrs: Record<string, string | number>;
 
-  private iframeHandle: any;
-
   constructor(
     private readonly render: Renderer2,
     private readonly lookupService: LookupService,
@@ -64,17 +62,10 @@ export class IframeLauncherComponent implements OnChanges, AfterViewInit {
   }
 
   ngOnChanges(): void {
-    if (this.app && this.component) {
+    if (this.app && this.component || this.url) {
       const iconfig = this.getIframeConfig();
       this.updateAttrs(iconfig.attrs, this.iconfig?.attrs);
       this.iconfig = iconfig;
-    } else if (this.url) {
-      const iframeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
-      this.iconfig = {
-        src: iframeUrl as string,
-        attrs: Object.assign({}, this.attrs) as Record<string, string>
-      }
-      this.updateAttrs(this.iconfig.attrs, this.iconfig?.attrs);
     }
   }
 
@@ -82,10 +73,7 @@ export class IframeLauncherComponent implements OnChanges, AfterViewInit {
     this.updateAttrs(this.iconfig.attrs);
   }
 
-  private setupCommunicationChannel(): void {
-    if (this.iframeEl) {
-      this.iframeHandle = this.iframeEl.nativeElement.contentWindow;
-    }
+  onLoad(iframe): void {
   }
 
   private updateAttrs(newValue: Record<string, string>, oldValue?: Record<string, string>): void {
@@ -105,12 +93,19 @@ export class IframeLauncherComponent implements OnChanges, AfterViewInit {
   }
 
   private getIframeConfig(): any {
-    const appConfig = this.lookupService
-      // todo: valorkin: this configuration seems to be more appropriate
-      .lookup(new Map([['name', this.app]])) as unknown as { descriptor: MFAppConfiguration };
-    const frameConfig = appConfig.descriptor.components[this.component];
-    const iframeUrl = this.sanitizer
-      .bypassSecurityTrustResourceUrl(`${ appConfig.descriptor.host }${ frameConfig.iframe }`);
+    let iframeUrl: SafeResourceUrl = '';
+
+    if (this.url) {
+      iframeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
+    } else {
+      const appConfig = this.lookupService
+        // todo: valorkin: this configuration seems to be more appropriate
+        .lookup(new Map([['name', this.app]])) as unknown as { descriptor: MFAppConfiguration };
+      const frameConfig = appConfig.descriptor.components[this.component];
+      iframeUrl = this.sanitizer
+        .bypassSecurityTrustResourceUrl(`${ appConfig.descriptor.host }${ frameConfig.iframe }`);
+    }
+
     return {
       src: iframeUrl,
       attrs: Object.assign({}, this.attrs)

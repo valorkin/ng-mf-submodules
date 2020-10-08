@@ -16,7 +16,12 @@ import { APP_ROUTES } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppShellModule } from '@fundamental-ngx/app-shell';
 import { HttpClientModule } from '@angular/common/http';
-import { COMPONENTS } from './components';
+import {
+  IframeLandingComponent,
+  IframeLauncherComponent,
+  LandingComponent,
+  PluginLauncherComponent
+} from './components';
 
 
 @NgModule({
@@ -35,7 +40,10 @@ import { COMPONENTS } from './components';
   ],
   declarations: [
     AppComponent,
-    ...COMPONENTS
+    IframeLandingComponent,
+    IframeLauncherComponent,
+    LandingComponent,
+    PluginLauncherComponent
   ],
   bootstrap: [AppComponent]
 })
