@@ -75,6 +75,7 @@ const mfe2Config = {
   ],
   exposes: {
     './CatalogItem': '../packages/content-item-app/src/app/item-page/item-page.component.ts',
+    './IframeCatalogItem': '../packages/content-item-app/src/app/iframe-item-page/iframe-item-page.component.ts',
     './YourFavorites': '../packages/content-item-app/src/app/your-favorites/your-favorites.component.ts',
   }
 };
@@ -135,6 +136,21 @@ const mfe5Config = {
   ],
   exposes: {
     './Counter': '../packages/ngrx-app/src/app/counter/counter.component.ts',
+  }
+};
+
+const mfe6Config = {
+  projectName: 'auth-app',
+  name: 'authApp',
+  main: 'main',
+  port: 4206,
+  publicPath: 'http://localhost:4206/',
+  projectRoot: '../packages/webcomp-auth-app',
+  shared: [
+    "rxjs"
+  ],
+  exposes: {
+    './Login': '../packages/webcomp-auth-app/component',
   }
 };
 
@@ -224,6 +240,54 @@ function _configTemplate(ngConfig, projectConfig) {
   }
 }
 
+function _webComponentConfigTemplate(projectConfig) {
+  const {projectName, name, main, port, publicPath, projectRoot, shareScope, shared, exposes } = projectConfig;
+
+  return {
+    entry: `${projectRoot}/${main}`,
+    mode: "development",
+    devServer: {
+      contentBase: path.normalize(path.join(__dirname, '../dist', projectName)),
+      port
+    },
+    module: {
+      rules: [
+        {
+          test: /\.css$/i,
+          use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        },
+        {
+          test: /\.ts$/,
+          use: 'ts-loader',
+          exclude: /node_modules/,
+        },
+      ],
+    },
+    output: {
+      publicPath,
+      path: path.normalize(path.normalize(path.join(__dirname, '../dist', projectName))),
+      filename: '[name].js'
+    },
+    resolve: {
+      extensions: [ '.ts', '.js' ],
+    },
+    plugins: [
+      new MiniCssExtractPlugin(),
+      new ModuleFederationPlugin({
+        name,
+        library: {type: "var", name},
+        filename: "remoteEntry.js",
+        exposes,
+        shared,
+        shareScope: shareScope || 'default'
+      }),
+      new HtmlWebpackPlugin({
+        template: path.normalize((path.join(projectRoot, 'index.html')))
+      }),
+    ]
+  }
+}
+
 module.exports = [
   fromNgConfig(mfe1Config, '../packages/content-req-app/angular.json'),
   fromNgConfig(mfe2Config, '../packages/content-item-app/angular.json'),
@@ -231,6 +295,8 @@ module.exports = [
   fromNgConfig(mfe4Config, '../packages/nx-app/angular.json'),
   fromNgConfig(mfe5Config, '../packages/ngrx-app/angular.json'),
   fromNgConfig(shellConfig, '../packages/one-bx-shell-app/angular.json'),
+
+  _webComponentConfigTemplate(mfe6Config)
 ];
 
 function webpackStylesConfig(pathToConfig){

@@ -6,23 +6,14 @@
   </fd-layout-panel>
   <fd-layout-panel [columnSpan]="2" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <h4>Quick Links</h4>
-      <hr/>
-      <a fd-link href="">
-        <fd-icon [size]="'s'" glyph="activity-items"></fd-icon>
-        Request Non-catalog Item</a><br/><br/>
-
-      <a fd-link href="">
-        <fd-icon [size]="'s'" glyph="batch-payments"></fd-icon>
-        Request By Plant</a><br/><br/>
-      <a fd-link href="">
-        <fd-icon [size]="'s'" glyph="cart"></fd-icon>
-        Create Project</a><br/><br/>
+      <fds-iframe-launcher url="http://localhost:5400"
+                            [attrs]="{frameborder:0, width: '100%', height: '210px'}">
+      </fds-iframe-launcher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 
   <fd-layout-panel [columnSpan]="5" fdLayoutGridSpan>
-    <fds-plugin-laucher name="contentItem.recommendedCategories"></fds-plugin-laucher>
+    <app-plugin-laucher name="contentItem.recommendedCategories"></app-plugin-laucher>
   </fd-layout-panel>
 
   <fd-layout-panel [columnSpan]="1" fdLayoutGridSpan>
@@ -40,6 +31,12 @@
   <fd-layout-panel [columnSpan]="2" fdLayoutGridSpan>
     <fd-layout-panel-body>
       <a routerLink="/calc">Navigate to calculation component</a>
+    </fd-layout-panel-body>
+  </fd-layout-panel>
+
+  <fd-layout-panel [columnSpan]="3" fdLayoutGridSpan>
+    <fd-layout-panel-body>
+      <app-plugin-laucher name="authApp.login"></app-plugin-laucher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 </fd-layout-grid>

@@ -1,0 +1,43 @@
+<fd-layout-grid [col]="6">
+  <fd-layout-panel fdLayoutGridSpan [columnSpan]="4">
+    <fd-layout-panel-body>
+      <fds-iframe-launcher
+        app="contentReq" component="prlist"
+        [attrs]="{frameborder:0, width: '100%', height: '350px'}">
+      </fds-iframe-launcher>
+    </fd-layout-panel-body>
+  </fd-layout-panel>
+  <fd-layout-panel fdLayoutGridSpan [columnSpan]="2">
+    <fd-layout-panel-body>
+      <h4>Quick Links</h4>
+      <hr/>
+      <a href="" fd-link>
+        <fd-icon glyph="activity-items" size="s"></fd-icon>
+        Request Non-catalog Item</a><br/><br/>
+
+      <a href="" fd-link>
+        <fd-icon glyph="batch-payments" size="s"></fd-icon>
+        Request By Plant</a><br/><br/>
+      <a href="" fd-link>
+        <fd-icon glyph="cart" size="s"></fd-icon>
+        Create Project</a><br/><br/>
+    </fd-layout-panel-body>
+  </fd-layout-panel>
+
+  <fd-layout-panel fdLayoutGridSpan [columnSpan]="5">
+    <fds-iframe-launcher
+      app="contentItem" component="recommendedCategories"
+      [attrs]="{frameborder:0, width: '100%', height: '450px'}">
+    </fds-iframe-launcher>
+
+  </fd-layout-panel>
+
+  <fd-layout-panel fdLayoutGridSpan [columnSpan]="1">
+    <fd-layout-panel-body>
+      <fds-iframe-launcher
+        app="contentItem2" component="yourFavorite"
+        [attrs]="{frameborder:0, width: '258px', height: '450px'}">
+      </fds-iframe-launcher>
+    </fd-layout-panel-body>
+  </fd-layout-panel>
+</fd-layout-grid>
