@@ -13,12 +13,12 @@ import {
   ViewContainerRef
 } from '@angular/core';
 import {
+  AngularIvyComponentDescriptor,
   isPluginComponent,
   loadRemoteModule,
   LookupService,
   PluginDescriptor,
-  PluginManagerService,
-  Scope
+  PluginManagerService
 } from '@fundamental-ngx/app-shell';
 
 export type ExtendedPluginDescriptor = PluginDescriptor & {
@@ -36,17 +36,13 @@ export type ExtendedPluginDescriptor = PluginDescriptor & {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PluginLauncherComponent implements OnChanges {
-  @Input()
-  type: Scope = Scope.Page;
-
+  /** plugin name */
   @Input()
   name: string;
 
+  /** module name */
   @Input()
-  category: string;
-
-  @Input()
-  provider: string;
+  module: string;
 
   @Input()
   descriptor: Partial<PluginDescriptor>;
@@ -74,37 +70,31 @@ export class PluginLauncherComponent implements OnChanges {
       }
       this.descriptor = item.descriptor;
     }
-    this.doCreateComponent(this.descriptor);
+    this.doCreateComponent(this.descriptor, this.module);
   }
 
 
-  async doCreateComponent(descriptor: Partial<ExtendedPluginDescriptor>): Promise<void> {
-    const component = await loadRemoteModule(descriptor)
-      .then(m => m[descriptor.componentName]);
+  async doCreateComponent(descriptor: Partial<ExtendedPluginDescriptor>, moduleName: string): Promise<void> {
+    const _module = descriptor.modules.find(module => module.name === moduleName);
+    const _component = await loadRemoteModule<AngularIvyComponentDescriptor>(descriptor, _module as AngularIvyComponentDescriptor)
+      .then(m => m[_module.name]);
 
-    if (descriptor.framework === 'legacy') {
-      const element = document.createElement(component);
+    if (_module.type === 'custom-element') {
+      const element = document.createElement(_component);
       this._render.appendChild(this._elementRef.nativeElement, element);
+      return;
+    }
 
-    } else {
-      const factory = this.cfr.resolveComponentFactory(component);
-      const componentRef: ComponentRef<any> = this.viewContainer.createComponent(factory, null, this._injector);
-
-      if (isPluginComponent(componentRef.instance)) {
-        this._pluginMgr.register(descriptor, componentRef.instance);
-      }
+    const factory = this.cfr.resolveComponentFactory(_component);
+    const componentRef: ComponentRef<any> = this.viewContainer.createComponent(factory, null, this._injector);
+    if (isPluginComponent(componentRef.instance)) {
+      this._pluginMgr.register(descriptor, componentRef.instance);
     }
     this._cd.detectChanges();
   }
 
   private initQuery(): Map<string, any> {
     const query = new Map();
-    if (this.provider) {
-      query.set('provider', this.provider);
-    }
-    if (this.category) {
-      query.set('category', this.category);
-    }
 
     if (this.name) {
       query.set('name', this.name);

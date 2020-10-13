@@ -155,7 +155,7 @@ export class AppComponent implements OnInit {
 
 
   constructor(private sanitizer: DomSanitizer, public _appShell: AppShellProviderService) {
-    this._appShell.subscriber('app:event', (m: Message) => {
+    this._appShell.messageBus.subscribe('app:event', (m: Message) => {
       this.onAppEvent(m);
     });
   }

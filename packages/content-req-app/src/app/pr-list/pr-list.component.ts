@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
+  EventType,
   Listener,
   Message,
   Permission,
@@ -64,14 +65,14 @@ export class PrListComponent implements OnInit, PluginComponent {
   }
 
   initialize(context: PluginContext): void {
-    this.appEventPub = context.publisher('app:event');
+    this.appEventPub = context.messaging.createPublisher('app:event', EventType.ONLY_LAST);
   }
 
   getConfiguration(): Partial<PluginConfiguration> {
     return new PrListPluginConfiguration();
   }
 
-  onItemClicked($event: MouseEvent, id: string) {
+  onItemClicked($event: MouseEvent, id: string): void {
     this.appEventPub.publish(new TextMessage('Hello from Pr List: ' + id))
   }
 }

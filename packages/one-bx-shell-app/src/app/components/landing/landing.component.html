@@ -1,7 +1,7 @@
 <fd-layout-grid [col]="6">
   <fd-layout-panel [columnSpan]="4" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <fds-plugin-laucher name="contentReq.prList"></fds-plugin-laucher>
+      <fds-plugin-launcher name="contentReqApp" module="PrListComponent"></fds-plugin-launcher>
     </fd-layout-panel-body>
   </fd-layout-panel>
   <fd-layout-panel [columnSpan]="2" fdLayoutGridSpan>
@@ -13,18 +13,18 @@
   </fd-layout-panel>
 
   <fd-layout-panel [columnSpan]="5" fdLayoutGridSpan>
-    <app-plugin-laucher name="contentItem.recommendedCategories"></app-plugin-laucher>
+    <app-plugin-laucher name="contentRecommendedCategories" module="RecommendedCategoriesComponent"></app-plugin-laucher>
   </fd-layout-panel>
 
   <fd-layout-panel [columnSpan]="1" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <fds-plugin-laucher name="contentItem.yourFavorite"></fds-plugin-laucher>
+      <fds-plugin-launcher name="contentItemApp" module="YourFavoritesComponent"></fds-plugin-launcher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 
   <fd-layout-panel [columnSpan]="1" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <fds-plugin-laucher name="nx.yourFavorite"></fds-plugin-laucher>
+      <fds-plugin-launcher name="nxApp" module="YourFavoritesComponent"></fds-plugin-launcher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 
@@ -36,7 +36,7 @@
 
   <fd-layout-panel [columnSpan]="3" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <app-plugin-laucher name="authApp.login"></app-plugin-laucher>
+      <app-plugin-laucher name="authApp" module="elementName"></app-plugin-laucher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 </fd-layout-grid>
