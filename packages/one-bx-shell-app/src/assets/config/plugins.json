@@ -97,6 +97,20 @@
     "componentName": "ItemPageComponent",
     "scope": "Page",
     "category": "main",
+    "hasRoutes": true
+  },
+  {
+    "name": "contentItem.laptops",
+    "provider": "Ariba",
+    "version": "0.0.1",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "remoteName": "contentLaptops",
+    "remoteRoute": "laptops",
+    "exposedModule": "./Laptops",
+    "displayName": "LaptopsComponent",
+    "componentName": "LaptopsComponent",
+    "scope": "Page",
+    "category": "main",
     "hasRoutes": false
   },
   {

@@ -77,6 +77,7 @@ const mfe2Config = {
     './CatalogItem': '../packages/content-item-app/src/app/item-page/item-page.component.ts',
     './IframeCatalogItem': '../packages/content-item-app/src/app/iframe-item-page/iframe-item-page.component.ts',
     './YourFavorites': '../packages/content-item-app/src/app/your-favorites/your-favorites.component.ts',
+    './Laptops': '../packages/content-item-app/src/app/laptops/laptops.component.ts',
   }
 };
 
@@ -289,11 +290,11 @@ function _webComponentConfigTemplate(projectConfig) {
 }
 
 module.exports = [
-  fromNgConfig(mfe1Config, '../packages/content-req-app/angular.json'),
+  // fromNgConfig(mfe1Config, '../packages/content-req-app/angular.json'),
   fromNgConfig(mfe2Config, '../packages/content-item-app/angular.json'),
-  fromNgConfig(mfe3Config, '../packages/content-recommended-categories/angular.json'),
-  fromNgConfig(mfe4Config, '../packages/nx-app/angular.json'),
-  fromNgConfig(mfe5Config, '../packages/ngrx-app/angular.json'),
+  // fromNgConfig(/mfe3Config, '../packages/content-recommended-categories/angular.json'),
+  // fromNgConfig(mfe4Config, '../packages/nx-app/angular.json'),
+  // fromNgConfig(mfe5Config, '../packages/ngrx-app/angular.json'),
   fromNgConfig(shellConfig, '../packages/one-bx-shell-app/angular.json'),
 
   _webComponentConfigTemplate(mfe6Config)

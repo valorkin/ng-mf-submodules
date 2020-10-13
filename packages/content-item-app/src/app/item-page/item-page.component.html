@@ -1,12 +1,12 @@
 <fd-breadcrumb>
   <fd-breadcrumb-item>
-    <a routerLink="#" fd-breadcrumb-link>IT hardware and software </a>
+    <a routerLink="/item-detail/hard-soft" fd-breadcrumb-link>IT hardware and software </a>
   </fd-breadcrumb-item>
   <fd-breadcrumb-item>
-    <a routerLink="#" fd-breadcrumb-link>All laptops</a>
+    <a routerLink="/item-detail/laptops" fd-breadcrumb-link>All laptops</a>
   </fd-breadcrumb-item>
   <fd-breadcrumb-item>
-    <a [queryParams]="'#'" routerLink="#" fd-breadcrumb-link>Apple</a>
+    <a [queryParams]="{search: 'iphone'}" routerLink="/item-detail/apple" fd-breadcrumb-link>Apple</a>
   </fd-breadcrumb-item>
   <fd-breadcrumb-item>
     <span>Breadcrumb Level 4</span>
@@ -74,3 +74,5 @@
   </div>
 
 </ng-template>
+
+<router-outlet></router-outlet>

@@ -1,8 +1,8 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {YourFavoritesComponent} from './your-favorites.component';
-import {ButtonModule, ImageModule} from '@fundamental-ngx/core';
-import {RouterModule} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { YourFavoritesComponent } from './your-favorites.component';
+import { ButtonModule, ImageModule } from '@fundamental-ngx/core';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -12,7 +12,7 @@ import {RouterModule} from '@angular/router';
     ImageModule
   ],
   declarations: [YourFavoritesComponent],
-  exports: [YourFavoritesComponent],
+  exports: [YourFavoritesComponent]
 })
 export class YourFavoritesModule {
 }

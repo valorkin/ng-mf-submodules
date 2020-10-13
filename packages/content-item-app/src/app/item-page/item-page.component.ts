@@ -23,16 +23,13 @@ export class ItemPageComponent implements OnInit, PluginComponent {
   ngOnInit(): void {
   }
 
-
   initialize(context: PluginContext): void {
     this.appEventPub = context.publisher('app:event');
   }
 
-
   getConfiguration(): Partial<PluginConfiguration> {
     return {};
   }
-
 
   onAddToCard($event: MouseEvent) {
     const m = new MapMessage('app:event');
