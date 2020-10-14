@@ -13,26 +13,18 @@ import {
   templateUrl: './item-page.component.html',
   styleUrls: ['./item-page.component.scss']
 })
-export class ItemPageComponent implements OnInit, PluginComponent {
-  value1: number = 2;
+export class ItemPageComponent implements PluginComponent {
+  value1 = 2;
   appEventPub: TopicPublisher<Message>;
 
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
-
   initialize(context: PluginContext): void {
-    this.appEventPub = context.publisher('app:event');
+    this.appEventPub = context.messaging.createPublisher('app:event');
   }
 
 
   getConfiguration(): Partial<PluginConfiguration> {
     return {};
   }
-
 
   onAddToCard($event: MouseEvent) {
     const m = new MapMessage('app:event');
