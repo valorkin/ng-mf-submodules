@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
-  EventType,
   Listener,
   Message,
+  MessagingService,
   Permission,
   PluginComponent,
   PluginConfiguration,
@@ -29,7 +29,7 @@ import {
 })
 export class PrListComponent implements OnInit, PluginComponent {
   tableRows: any[];
-  appEventPub: TopicPublisher<Message>;
+  private messaging: MessagingService;
 
   ngOnInit(): void {
     this.tableRows = [
@@ -65,7 +65,7 @@ export class PrListComponent implements OnInit, PluginComponent {
   }
 
   initialize(context: PluginContext): void {
-    this.appEventPub = context.messaging.createPublisher('app:event', EventType.ONLY_LAST);
+    this.messaging = context.messaging;
   }
 
   getConfiguration(): Partial<PluginConfiguration> {
@@ -73,7 +73,7 @@ export class PrListComponent implements OnInit, PluginComponent {
   }
 
   onItemClicked($event: MouseEvent, id: string): void {
-    this.appEventPub.publish(new TextMessage('Hello from Pr List: ' + id))
+    this.messaging.publish('app:event', new TextMessage('Hello from Pr List: ' + id))
   }
 }
 

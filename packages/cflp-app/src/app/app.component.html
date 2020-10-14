@@ -1,0 +1,43 @@
+<fd-shellbar>
+    <fd-shellbar-logo>
+        <a aria-label="SAP" class="fd-shellbar__logo fd-shellbar__logo--image-replaced" href="#"></a>
+    </fd-shellbar-logo>
+    <fd-product-menu [closePopoverOnSelect]="true" [control]="productMenuControl" [items]="productMenuItems">
+    </fd-product-menu>
+    <fd-shellbar-subtitle>
+        Subtitle
+    </fd-shellbar-subtitle>
+    <fd-shellbar-actions [userMenu]="userMenu" [user]="user">
+        <fd-shellbar-action
+                *ngFor="let action of actions"
+                [callback]="action.callback"
+                [glyph]="action.glyph"
+                [label]="action.label"
+                [notificationCount]="action.notificationCount"
+                [notificationLabel]="action.notificationLabel"
+        >
+        </fd-shellbar-action>
+
+        <button [fdMenuTrigger]="themesMenu"
+                [fdMenu]="true"
+                class="fd-shellbar__button--menu fd-docs--theme-menu"
+                fd-button
+                fdType="transparent"
+                glyph="palette">
+        </button>
+
+        <fd-menu #themesMenu
+                 [fillControlMode]="null"
+                 placement="bottom-end">
+            <li *ngFor="let theme of themes" fd-menu-item>
+                <div  fd-menu-interactive>
+                    <span fd-menu-title>{{ theme.name }}</span>
+                </div>
+            </li>
+        </fd-menu>
+    </fd-shellbar-actions>
+</fd-shellbar>
+<!-- ONE BX APP HERE-->
+<iframe src="http://localhost:4200" frameborder="0" height="100%" width="100%" style="overflow: hidden">
+</iframe>
+<!-- ONE BX APP HERE-->
