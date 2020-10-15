@@ -18,9 +18,7 @@ import { AppShellModule } from '@fundamental-ngx/app-shell';
 import { HttpClientModule } from '@angular/common/http';
 import {
   IframeLandingComponent,
-  IframeLauncherComponent,
   LandingComponent,
-  PluginLauncherComponent
 } from './components';
 
 
@@ -41,9 +39,7 @@ import {
   declarations: [
     AppComponent,
     IframeLandingComponent,
-    IframeLauncherComponent,
     LandingComponent,
-    PluginLauncherComponent
   ],
   bootstrap: [AppComponent]
 })
