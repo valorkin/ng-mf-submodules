@@ -1,7 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { loadRemoteModule } from '@fundamental-ngx/app-shell';
 import { ItemPageComponent } from './item-page.component';
+import { loadRemoteModule } from '@fundamental-ngx/app-shell';
 
 const APP_ROUTES: Routes = [
   {
@@ -16,8 +16,9 @@ const APP_ROUTES: Routes = [
           exposedModule: 'Laptops'
         })
           .then(m => m.LaptopsModule)
-        // loadChildren: () => import(`./modules/laptops/laptops.module`).then(m => m.LaptopsModule)
       }
+      // loadChildren: () => import(`./modules/laptops/laptops.module`).then(m => m.LaptopsModule)
+      // }
       // {
       //   path: 'hard-soft',
       //   loadChildren: () => import(`./modules/hard-soft/hard-soft.module`).then(m => m.HardSoftModule)

@@ -105,7 +105,7 @@
     "version": "0.0.1",
     "remoteEntry": "http://localhost:4202/remoteEntry.js",
     "remoteName": "contentLaptops",
-    "remoteRoute": "item-detail/laptops",
+    "remoteRoute": "/item-detail/laptops",
     "exposedModule": "./Laptops",
     "displayName": "LaptopsComponent",
     "componentName": "LaptopsComponent",
