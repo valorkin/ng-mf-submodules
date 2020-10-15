@@ -58,7 +58,8 @@
       {
         "name": "CounterComponent",
         "type": "angular-ivy-component",
-        "exposedModule": "./Counter"
+        "exposedModule": "./Counter",
+        "route": "calc"
       }
     ]
   },
@@ -85,6 +86,19 @@
         "name": "elementName",
         "type": "custom-element",
         "exposedModule": "./Login"
+      }
+    ]
+  },
+  {
+    "name": "iframe-source-website",
+    "version": "0.0.1",
+    "provider": "Ariba",
+    "uri": "http://localhost:5400",
+    "modules": [
+      {
+        "name": "landing",
+        "type": "iframe",
+        "html": "/index.html"
       }
     ]
   }

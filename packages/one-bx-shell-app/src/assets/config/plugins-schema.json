@@ -73,6 +73,9 @@
           "uri": {
             "type": "string"
           },
+          "provider": {
+            "type": "string"
+          },
           "modules": {
             "type": "array",
             "items": [

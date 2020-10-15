@@ -1,30 +1,30 @@
 <fd-layout-grid [col]="6">
   <fd-layout-panel [columnSpan]="4" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <fds-plugin-launcher name="contentReqApp" module="PrListComponent"></fds-plugin-launcher>
+      <fds-plugin-laucher name="contentReqApp" module="PrListComponent"></fds-plugin-laucher>
     </fd-layout-panel-body>
   </fd-layout-panel>
   <fd-layout-panel [columnSpan]="2" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <fds-iframe-launcher url="http://localhost:5400"
-                            [attrs]="{frameborder:0, width: '100%', height: '210px'}">
-      </fds-iframe-launcher>
+      <fds-plugin-laucher iframeUri="http://localhost:5400"
+                          [iframeAttrs]="{frameborder:0, width: '100%', height: '210px'}"
+      ></fds-plugin-laucher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 
   <fd-layout-panel [columnSpan]="5" fdLayoutGridSpan>
-    <app-plugin-laucher name="contentRecommendedCategories" module="RecommendedCategoriesComponent"></app-plugin-laucher>
+    <fds-plugin-laucher name="contentRecommendedCategories" module="RecommendedCategoriesComponent"></fds-plugin-laucher>
   </fd-layout-panel>
 
   <fd-layout-panel [columnSpan]="1" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <fds-plugin-launcher name="contentItemApp" module="YourFavoritesComponent"></fds-plugin-launcher>
+      <fds-plugin-laucher name="contentItemApp" module="YourFavoritesComponent"></fds-plugin-laucher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 
   <fd-layout-panel [columnSpan]="1" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <fds-plugin-launcher name="nxApp" module="YourFavoritesComponent"></fds-plugin-launcher>
+      <fds-plugin-laucher name="nxApp" module="YourFavoritesComponent"></fds-plugin-laucher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 
@@ -36,7 +36,7 @@
 
   <fd-layout-panel [columnSpan]="3" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <app-plugin-laucher name="authApp" module="elementName"></app-plugin-laucher>
+      <fds-plugin-laucher name="authApp" module="elementName"></fds-plugin-laucher>
     </fd-layout-panel-body>
   </fd-layout-panel>
 </fd-layout-grid>
