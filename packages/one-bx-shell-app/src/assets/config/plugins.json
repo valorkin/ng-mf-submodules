@@ -58,7 +58,8 @@
       {
         "name": "CounterComponent",
         "type": "angular-ivy-component",
-        "exposedModule": "./Counter"
+        "exposedModule": "./Counter",
+        "route": "calc"
       }
     ]
   },
