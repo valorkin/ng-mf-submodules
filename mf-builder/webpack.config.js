@@ -78,7 +78,7 @@ const mfe2Config = {
     './CatalogItem': '../packages/content-item-app/src/app/item-page/item-page.component.ts',
     './IframeCatalogItem': '../packages/content-item-app/src/app/iframe-item-page/iframe-item-page.component.ts',
     './YourFavorites': '../packages/content-item-app/src/app/your-favorites/your-favorites.component.ts',
-    './Laptops': '../packages/content-item-app/src/app/modules/laptops/laptops.component.ts',
+    './ItemPageModule': '../packages/content-item-app/src/app/item-page/item-page.module.ts',
   }
 };
 

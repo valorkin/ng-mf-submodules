@@ -1,22 +1,24 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ItemPageComponent } from './item-page.component';
-import { loadRemoteModule } from '@fundamental-ngx/app-shell';
+import { LaptopsComponent } from './modules/laptops/laptops.component';
 
 const APP_ROUTES: Routes = [
   {
-    path: 'item-detail',
+    path: '',
     component: ItemPageComponent,
     children: [
       {
         path: 'laptops',
-        loadChildren: () => loadRemoteModule({
-          remoteEntry: 'http://localhost:4202/remoteEntry.js',
-          remoteName: 'contentLaptops',
-          exposedModule: 'Laptops'
-        })
-          .then(m => m.LaptopsModule)
+        component: LaptopsComponent
       }
+      //   loadChildren: () => loadRemoteModule({
+      //     remoteEntry: 'http://localhost:4202/remoteEntry.js',
+      //     remoteName: 'contentLaptops',
+      //     exposedModule: 'Laptops'
+      //   })
+      //     .then(m => m.LaptopsModule)
+      // }
       // loadChildren: () => import(`./modules/laptops/laptops.module`).then(m => m.LaptopsModule)
       // }
       // {
