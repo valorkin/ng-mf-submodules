@@ -5,12 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './item-page.component.html',
   styleUrls: ['./item-page.component.scss']
 })
-export class ItemPageComponent implements OnInit {
-  value1: number = 2;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class ItemPageComponent {
+  value1 = 2;
 }

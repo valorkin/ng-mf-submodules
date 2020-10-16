@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {
   Listener,
   Message,
+  MessagingService,
   Permission,
   PluginComponent,
   PluginConfiguration,
@@ -28,7 +29,7 @@ import {
 })
 export class PrListComponent implements OnInit, PluginComponent {
   tableRows: any[];
-  appEventPub: TopicPublisher<Message>;
+  private messaging: MessagingService;
 
   ngOnInit(): void {
     this.tableRows = [
@@ -64,15 +65,15 @@ export class PrListComponent implements OnInit, PluginComponent {
   }
 
   initialize(context: PluginContext): void {
-    this.appEventPub = context.publisher('app:event');
+    this.messaging = context.messaging;
   }
 
   getConfiguration(): Partial<PluginConfiguration> {
     return new PrListPluginConfiguration();
   }
 
-  onItemClicked($event: MouseEvent, id: string) {
-    this.appEventPub.publish(new TextMessage('Hello from Pr List: ' + id))
+  onItemClicked($event: MouseEvent, id: string): void {
+    this.messaging.publish('app:event', new TextMessage('Hello from Pr List: ' + id))
   }
 }
 

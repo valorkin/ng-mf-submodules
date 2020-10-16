@@ -16,14 +16,5 @@ export const APP_ROUTES: Routes = [
   {
     path: ':remote-route',
     component: PluginPageLauncherComponent
-  },
-  // {
-  //   path: 'catalog',
-  //   component: PluginPageLauncherComponent,
-  //   children: [
-  //     {path: '', redirectTo: 'tracks'},
-  //     {path: ':plugin-id', component: ArtistTrackListComponent}, (2)
-  //     {path: 'albums', component: ArtistAlbumListComponent}, (3)
-  //   ]
-  // }
+  }
 ];

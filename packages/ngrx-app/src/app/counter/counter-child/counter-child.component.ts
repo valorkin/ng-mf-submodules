@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { select, Store, StoreModule } from '@ngrx/store';
-import { AppState, reducers, selectCounterState } from '../../store/app.states';
+
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+
+import { AppState, reducers, selectCounterState } from '../../store/app.states';
 
 @Component({
   selector: 'app-counter-child',

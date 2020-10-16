@@ -1,11 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {
   MapMessage,
-  Message,
+  MessagingService,
   PluginComponent,
   PluginConfiguration,
-  PluginContext,
-  TopicPublisher
+  PluginContext
 } from '@fundamental-ngx/app-shell';
 
 @Component({
@@ -13,18 +12,12 @@ import {
   templateUrl: './item-page.component.html',
   styleUrls: ['./item-page.component.scss']
 })
-export class ItemPageComponent implements OnInit, PluginComponent {
-  value1: number = 2;
-  appEventPub: TopicPublisher<Message>;
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
+export class ItemPageComponent implements PluginComponent {
+  value1 = 2;
+  private messaging: MessagingService;
 
   initialize(context: PluginContext): void {
-    this.appEventPub = context.publisher('app:event');
+    this.messaging = context.messaging;
   }
 
   getConfiguration(): Partial<PluginConfiguration> {
@@ -36,6 +29,6 @@ export class ItemPageComponent implements OnInit, PluginComponent {
     m.set('type', 'add-to-card');
     m.set('payload', {xx: 'aa'});
 
-    this.appEventPub.publish(m);
+    this.messaging.publish('app:event', m);
   }
 }

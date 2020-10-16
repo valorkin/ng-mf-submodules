@@ -34,7 +34,8 @@ const shellConfig = {
     sharedDep('@angular/router'),
     sharedDep('@fundamental-ngx/core'),
     sharedDep('@fundamental-ngx/app-shell'),
-    sharedDep('@ngrx/store')
+    sharedDep('@ngrx/store'),
+    sharedDep('@ngrx/effects')
   ],
   exposes: {}
 };
@@ -133,7 +134,8 @@ const mfe5Config = {
     sharedDep('@angular/router'),
     sharedDep('@fundamental-ngx/core'),
     sharedDep('@fundamental-ngx/app-shell'),
-    sharedDep('@ngrx/store')
+    sharedDep('@ngrx/store'),
+    sharedDep('@ngrx/effects')
   ],
   exposes: {
     './Counter': '../packages/ngrx-app/src/app/counter/counter.component.ts',

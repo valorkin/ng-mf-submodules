@@ -18,9 +18,7 @@ import { AppShellModule } from '@fundamental-ngx/app-shell';
 import { HttpClientModule } from '@angular/common/http';
 import {
   IframeLandingComponent,
-  IframeLauncherComponent,
   LandingComponent,
-  PluginLauncherComponent
 } from './components';
 
 
@@ -36,14 +34,12 @@ import {
     LinkModule,
     FundamentalNgxCoreModule,
     BrowserAnimationsModule,
-    AppShellModule.forRoot('assets/config/plugins.json', true),
+    AppShellModule.forRoot('assets/config/plugins.json'),
   ],
   declarations: [
     AppComponent,
     IframeLandingComponent,
-    IframeLauncherComponent,
     LandingComponent,
-    PluginLauncherComponent
   ],
   bootstrap: [AppComponent]
 })
