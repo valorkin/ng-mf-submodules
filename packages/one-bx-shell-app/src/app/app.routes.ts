@@ -1,8 +1,7 @@
 import { Routes } from '@angular/router';
-import { PluginPageLauncherComponent } from '@fundamental-ngx/app-shell';
+import { loadRemoteModule, PluginPageLauncherComponent } from '@fundamental-ngx/app-shell';
 import { LandingComponent } from './components';
 import { IframeLandingComponent } from './components';
-
 
 export const APP_ROUTES: Routes = [
   {
@@ -12,6 +11,21 @@ export const APP_ROUTES: Routes = [
   {
     path: 'iframe',
     component: IframeLandingComponent
+  },
+  {
+    path: 'item-details',
+    // @ts-ignore
+    loadChildren:
+    // todo_valorkin this should work when we switch to cli builder
+    // () => import('contentItemApp/ItemPageModule').then(m => m.ItemPageModule)
+      () => loadRemoteModule({
+        uri: 'http://localhost:4202/remoteEntry.js',
+        name: 'contentItemApp'
+      }, {exposedModule: './ItemDetails'} as any)
+        .then(m => {
+          console.log(m);
+          return m.ItemDetailsModule;
+        })
   },
   {
     path: ':remote-route',
