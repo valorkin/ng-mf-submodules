@@ -1,32 +1,15 @@
 {
-  "name": "mf-root",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "private": true,
+  "name": "mf-test",
+  "version": "0.0.0",
   "scripts": {
-    "start": "npm run build && npm run serve",
-    "start:prod": "npm run build -- -- --mode production && npm run serve",
-    "build": "npm run build --prefix mf-builder",
-    "serve": "npm run serve:dist --prefix mf-builder",
-    "postinstall": "lerna bootstrap && npm run inst:builder",
-    "lerna": "lerna",
-    "inst:builder": "yarn --cwd mf-builder"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/valorkin/sap-ng-mf.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/valorkin/sap-ng-mf/issues"
-  },
-  "homepage": "https://github.com/valorkin/sap-ng-mf#readme",
-  "resolutions": {
-    "webpack": "5.0.0",
-    "terser": "5.3.5"
-  },
+  "private": true,
   "dependencies": {
     "@angular/animations": "~11.0.0-next.6",
     "@angular/common": "~11.0.0-next.6",
@@ -37,13 +20,10 @@
     "@angular/platform-browser-dynamic": "~11.0.0-next.6",
     "@angular/router": "~11.0.0-next.6",
     "rxjs": "~6.6.0",
-    "terser": "5.3.5",
     "tslib": "^2.0.0",
-    "yarn": "^1.22.10",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "lerna": "^3.22.1",
     "@angular-devkit/build-angular": "~0.1100.0-next.7",
     "@angular/cli": "~11.0.0-next.7",
     "@angular/compiler-cli": "~11.0.0-next.6",
