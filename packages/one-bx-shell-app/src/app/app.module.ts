@@ -34,7 +34,7 @@ import {
     LinkModule,
     FundamentalNgxCoreModule,
     BrowserAnimationsModule,
-    AppShellModule.forRoot('assets/config/plugins.json'),
+    AppShellModule.forRoot('assets/config/plugins.json')
   ],
   declarations: [
     AppComponent,
