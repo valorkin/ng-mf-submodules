@@ -25,10 +25,12 @@
     "@pscoped/ngx-pub-sub": "3.0.0",
     "@sap-theming/theming-base-content": "11.1.20",
     "concurrently": "^5.2.0",
+    "framebus": "^4.0.4",
     "json-stringify": "^1.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "rxjs": "^6.5.5",
     "tslib": "^2.0.1",
+    "worker-rpc": "^0.2.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

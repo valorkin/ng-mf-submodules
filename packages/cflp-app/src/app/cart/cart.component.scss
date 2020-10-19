@@ -1,0 +1,40 @@
+.cart {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  align-items: center;
+
+  &-image {
+    width: 16px;
+    height: 16px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      path {
+        fill: #fff;
+      }
+    }
+  }
+
+  &-counter {
+    position: absolute;
+    top: -2px;
+    right: -13px;
+    border-radius: 50%;
+    background-color: #d04343;
+    width: 15px;
+    height: 16px;
+    text-align: center;
+    line-height: 1.2;
+
+    span {
+      color: white;
+      font-size: 12px;
+    }
+  }
+}
+
+
