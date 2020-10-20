@@ -2,8 +2,10 @@
   "name": "federation-demo",
   "version": "0.0.0",
   "scripts": {
-    "build": "rimraf -Rf ../dist/ && webpack || true",
-    "serve:dist": "concurrently \"cd ../packages/iframe-source-website/ && ng serve --port 5400 \" \"cd ../packages/cflp-app/ && ng serve --port 5000 \"   \"serve ../dist/content-req-app -l 4201 -s\" \"serve ../dist/content-item-app -l 4202 -s\" \"serve ../dist/content-recommended-categories -l 4203 -s\"  \"serve ../dist/nx-app -l 4204 -s\" \"serve ../dist/ngrx-app -l 4205 -s\" \"serve ../dist/one-bx-shell-app -l 4200 -s\" \"serve ../dist/auth-app -l 4206 -s\"  ",
+    "build": "webpack",
+    "serve": "serve ../dist/auth-app -l 4206 -s",
+    "start": "npm run build && npm run serve",
+    "serve-old": "concurrently \"cd ../packages/iframe-source-website/ && ng serve --port 5400 \" \"cd ../packages/cflp-app/ && ng serve --port 5000 \"   \"serve ../dist/content-req-app -l 4201 -s\" \"serve ../dist/content-item-app -l 4202 -s\" \"serve ../dist/content-recommended-categories -l 4203 -s\"  \"serve ../dist/nx-app -l 4204 -s\" \"serve ../dist/ngrx-app -l 4205 -s\" \"serve ../dist/one-bx-shell-app -l 4200 -s\" \"serve ../dist/auth-app -l 4206 -s\"  ",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "resolutions": {
@@ -51,7 +53,7 @@
     "@types/jasmine": "^3.5.11",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.12.47",
-    "ts-loader": "^6.2.2",
+    "clean-webpack-plugin": "^3.0.0",
     "codelyzer": "^5.1.2",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^4.3.0",
@@ -72,6 +74,7 @@
     "sass-loader": "^10.0.2",
     "serve": "^11.3.2",
     "to-string-loader": "^1.1.6",
+    "ts-loader": "^6.2.2",
     "ts-node": "~8.3.0",
     "tslint": "^6.1.2",
     "typescript": "3.9.7",
