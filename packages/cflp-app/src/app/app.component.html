@@ -7,6 +7,8 @@
     <fd-shellbar-subtitle>
         Subtitle
     </fd-shellbar-subtitle>
+
+
     <fd-shellbar-actions [userMenu]="userMenu" [user]="user">
         <fd-shellbar-action
                 *ngFor="let action of actions"
@@ -26,6 +28,7 @@
                 glyph="palette">
         </button>
 
+
         <fd-menu #themesMenu
                  [fillControlMode]="null"
                  placement="bottom-end">
@@ -35,6 +38,8 @@
                 </div>
             </li>
         </fd-menu>
+
+        <app-cart></app-cart>
     </fd-shellbar-actions>
 </fd-shellbar>
 <!-- ONE BX APP HERE-->
