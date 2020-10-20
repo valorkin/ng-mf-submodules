@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import {
-  MapMessage,
   MessagingService,
   PluginComponent,
   PluginConfiguration,
   PluginContext
 } from '@fundamental-ngx/app-shell';
+import { CartProvider } from '../../../lib/cart.provider';
 
 @Component({
   selector: 'aba-item-page',
@@ -15,21 +15,18 @@ import {
 export class ItemPageComponent implements PluginComponent {
   value1 = 2;
   private messaging: MessagingService;
+  productIds = []
 
   initialize(context: PluginContext): void {
     this.messaging = context.messaging;
   }
 
-
   getConfiguration(): Partial<PluginConfiguration> {
     return {};
   }
 
-  onAddToCard($event: MouseEvent) {
-    const m = new MapMessage('app:event');
-    m.set('type', 'add-to-card');
-    m.set('payload', {xx: 'aa'});
-
-    this.messaging.publish('app:event', m);
+  onAddToCart($event: MouseEvent): void {
+    this.productIds.push('1' + this.productIds.length);
+    CartProvider.updateCart({productIds: [...this.productIds]});
   }
 }
