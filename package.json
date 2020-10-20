@@ -19,7 +19,7 @@
     "c-serve-06": "ng serve ngrx-app --no-watch",
     "c-serve-07": "npm start --prefix mf-builder",
     "c-serve-08": "cd ./packages/iframe-source-website/ && ng serve --port 5400 --no-watch --no-progress",
-    "c-serve-09": "cd ./packages/cflp-app/ && ng serve --port 5000"
+    "c-serve-09": "cd ./packages/cflp-app/ && ng serve --port 5000 --no-watch --no-progress"
   },
   "repository": {
     "type": "git",
