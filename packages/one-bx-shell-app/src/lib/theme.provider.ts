@@ -2,7 +2,7 @@
 import {rpcProvider} from './rpc.connector';
 
 const ChangeThemeAction = 'changeTheme';
-const GetDefaultThemeAction = 'getDefaultTheme';
+const GetCurrentThemeAction = 'getCurrentTheme';
 
 interface ThemeValue {
   id: string;
@@ -11,7 +11,7 @@ interface ThemeValue {
 }
 
 let defaultTheme;
-rpcProvider.registerRpcHandler(GetDefaultThemeAction, () => defaultTheme);
+rpcProvider.registerRpcHandler(GetCurrentThemeAction, () => defaultTheme);
 export class ThemeProvider {
   static setCurrentTheme(value: ThemeValue): void {
     defaultTheme = value;

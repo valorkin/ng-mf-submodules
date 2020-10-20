@@ -3,7 +3,7 @@ import { EventSubject } from './event.subject';
 import { rpcProvider } from './rpc.connector';
 
 const ChangeThemeActionName = 'changeTheme';
-const GetDefaultThemeAction = 'getDefaultTheme';
+const GetCurrentThemeAction = 'getCurrentTheme';
 
 export interface ThemeValue {
   id: string;
@@ -18,7 +18,7 @@ export class ThemeConsumer {
   }
 
   static getCurrentTheme(callback: (value: ThemeValue) => void): void  {
-    rpcProvider.rpc<void, ThemeValue>(GetDefaultThemeAction).then(callback);
+    rpcProvider.rpc<void, ThemeValue>(GetCurrentThemeAction).then(callback);
   }
 }
 rpcProvider.registerRpcHandler(ChangeThemeActionName, (payload: ThemeValue) => subs.emit(payload));

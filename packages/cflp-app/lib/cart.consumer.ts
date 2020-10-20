@@ -2,7 +2,7 @@ import { rpcProvider } from './rpc.connector';
 import { EventSubject } from './event.subject';
 
 const ChangeCartAction = 'changeCartState';
-const GetDefaultCartAction = 'defaultCartState';
+const GetCurrentCartAction = 'currentCartState';
 
 export interface CartValue {
     productIds: string[]
@@ -15,7 +15,7 @@ export class CartConsumer {
     }
 
     static getCartProducts(callback: (value: CartValue) => void): void  {
-        rpcProvider.rpc<void, CartValue>(GetDefaultCartAction).then(callback);
+        rpcProvider.rpc<void, CartValue>(GetCurrentCartAction).then(callback);
     }
 }
 rpcProvider.registerRpcHandler(ChangeCartAction, (payload: CartValue) => subs.emit(payload));

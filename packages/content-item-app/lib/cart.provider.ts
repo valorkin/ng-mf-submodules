@@ -1,14 +1,14 @@
 import { rpcProvider } from './rpc.connector';
 
 const ChangeCartAction = 'changeCartState';
-const GetDefaultCartAction = 'defaultCartState';
+const GetCurrentCartAction = 'currentCartState';
 
 interface CartValue {
   productIds: string[]
 }
 
 let cart;
-rpcProvider.registerRpcHandler(GetDefaultCartAction, () => cart);
+rpcProvider.registerRpcHandler(GetCurrentCartAction, () => cart);
 
 export class CartProvider {
   static setCartProducts(value: CartValue): void {

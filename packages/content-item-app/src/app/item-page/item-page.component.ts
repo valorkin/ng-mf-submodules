@@ -26,7 +26,6 @@ export class ItemPageComponent implements PluginComponent {
   }
 
   onAddToCart($event: MouseEvent): void {
-    console.log('onAddToCart event', );
     this.productIds.push('1' + this.productIds.length);
     CartProvider.updateCart({productIds: [...this.productIds]});
   }

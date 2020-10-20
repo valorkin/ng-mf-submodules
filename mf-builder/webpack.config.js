@@ -289,11 +289,11 @@ function _webComponentConfigTemplate(projectConfig) {
 }
 
 module.exports = [
-  fromNgConfig(mfe1Config, '../packages/content-req-app/angular.json'),
+  // fromNgConfig(mfe1Config, '../packages/content-req-app/angular.json'),
   fromNgConfig(mfe2Config, '../packages/content-item-app/angular.json'),
-  fromNgConfig(mfe3Config, '../packages/content-recommended-categories/angular.json'),
-  fromNgConfig(mfe4Config, '../packages/nx-app/angular.json'),
-  fromNgConfig(mfe5Config, '../packages/ngrx-app/angular.json'),
+  // fromNgConfig(mfe3Config, '../packages/content-recommended-categories/angular.json'),
+  // fromNgConfig(mfe4Config, '../packages/nx-app/angular.json'),
+  // fromNgConfig(mfe5Config, '../packages/ngrx-app/angular.json'),
   fromNgConfig(shellConfig, '../packages/one-bx-shell-app/angular.json'),
 
   _webComponentConfigTemplate(mfe6Config)
