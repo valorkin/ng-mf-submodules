@@ -1,9 +1,14 @@
-import { Component, NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {Component, NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
 @Component({
-  template: `<p>item-details page here</p>
-  <router-outlet></router-outlet>`
+  template: `
+    <h2>Item Detail Page (sub routing)</h2>
+    <p>
+      item-details page here
+    </p>
+    <a routerLink="./sub">Go to sub detail </a>
+    <router-outlet></router-outlet>`
 })
 export class ItemDetailsComponent {
 
