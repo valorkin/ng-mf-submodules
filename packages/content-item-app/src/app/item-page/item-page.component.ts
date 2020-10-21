@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {
   MessagingService,
   PluginComponent,
   PluginConfiguration,
-  PluginContext
+  PluginContext,
+  TextMessage
 } from '@fundamental-ngx/app-shell';
-import { CartProvider } from '../../../lib/cart.provider';
+import {CartProvider} from '../../../lib/cart.provider';
 
 @Component({
   selector: 'aba-item-page',
@@ -27,6 +28,7 @@ export class ItemPageComponent implements PluginComponent {
 
   onAddToCart($event: MouseEvent): void {
     this.productIds.push('1' + this.productIds.length);
+    this.messaging.publish('app:event', new TextMessage('Item Added to Card', 'app:event'));
     CartProvider.updateCart({productIds: [...this.productIds]});
   }
 }
