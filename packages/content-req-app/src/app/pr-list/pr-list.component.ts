@@ -11,7 +11,6 @@ export class PrListComponent implements OnInit, OnDestroy {
   subscriber: TopicSubscriber<Message>;
 
   constructor(private messaging: MessagingService) {
-    this.messaging = messaging;
   }
 
   ngOnInit(): void {
