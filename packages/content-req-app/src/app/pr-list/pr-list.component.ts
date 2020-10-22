@@ -1,35 +1,17 @@
-import {Component, OnInit} from '@angular/core';
-import {
-  Listener,
-  Message,
-  MessagingService,
-  Permission,
-  PluginComponent,
-  PluginConfiguration,
-  PluginContext,
-  TextMessage,
-  TopicPublisher
-} from '@fundamental-ngx/app-shell';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Message, MessagingService, TextMessage, TOPIC_THEME_CHANGE, TopicSubscriber} from '@fundamental-ngx/app-shell';
 
 
-/**
- * Should we have interface or crete custom decorator
- *
- * ```ts
- * @PluginComponent({
- *   configuration: PrListPluginConfiguration
- * })
- * ```
- * but then I still want to initialize ?
- *
- */
 @Component({
   selector: 'app-pr-list',
   templateUrl: './pr-list.component.html',
 })
-export class PrListComponent implements OnInit, PluginComponent {
+export class PrListComponent implements OnInit, OnDestroy {
   tableRows: any[];
-  private messaging: MessagingService;
+  subscriber: TopicSubscriber<Message>;
+
+  constructor(private messaging: MessagingService) {
+  }
 
   ngOnInit(): void {
     this.tableRows = [
@@ -62,40 +44,17 @@ export class PrListComponent implements OnInit, PluginComponent {
         column5: '$10,500.00 USD'
       }
     ];
+
+    this.subscriber = this.messaging.subscribe(TOPIC_THEME_CHANGE, ((m) => {
+      console.log('@@@ PR-LIST: Theme changed to => ', m);
+    }));
   }
 
-  initialize(context: PluginContext): void {
-    this.messaging = context.messaging;
-  }
-
-  getConfiguration(): Partial<PluginConfiguration> {
-    return new PrListPluginConfiguration();
+  ngOnDestroy(): void {
+    this.subscriber.unSubscribe();
   }
 
   onItemClicked($event: MouseEvent, id: string): void {
     this.messaging.publish('app:event', new TextMessage('Hello from Pr List: ' + id))
   }
-}
-
-export class PrListPluginConfiguration implements Partial<PluginConfiguration> {
-
-  getAngularVersionCompatibility(): string {
-    return '10.1.1';
-  }
-
-  getPermission(): Permission {
-    return new Permission(true);
-  }
-
-  addListeners(): Array<Listener> {
-    const themeChange = new Listener('theme:change',
-      'Listening for Theming changes',
-      (m: Message) => {
-        console.log('@@@ PR-LIST: Theme changed to => ', m);
-      });
-    return [themeChange];
-
-
-  }
-
 }
