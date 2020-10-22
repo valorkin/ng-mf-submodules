@@ -1,12 +1,6 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {
-  Listener,
-  Message,
-  PluginComponent,
-  PluginConfiguration,
-  PluginContext,
-  TextMessage
-} from '@fundamental-ngx/app-shell';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {Message, MessagingService, TextMessage, TOPIC_APP_EVENT} from '@fundamental-ngx/app-shell';
+import {TopicSubscriber} from '@fundamental-ngx/app-shell/lib/api/events/message-bus';
 
 @Component({
   selector: 'aba-your-favorites',
@@ -14,34 +8,27 @@ import {
   styleUrls: ['./your-favorites.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class YourFavoritesComponent implements OnInit, PluginComponent {
-
+export class YourFavoritesComponent implements OnInit, OnDestroy {
   receivedTextFromOtherApp: string = 'Nothing';
+  subscriber: TopicSubscriber<Message>;
 
-  private appEvent = new Listener('app:event', '', (m: Message) => {
-    if (m instanceof TextMessage) {
-      this.receivedTextFromOtherApp = m.text;
 
-      alert('This your favorite panel => ' + m.text);
-      this._cd.detectChanges();
-    }
-  });
-
-  constructor(private _cd: ChangeDetectorRef) {
+  constructor(private _cd: ChangeDetectorRef, private _msg: MessagingService) {
   }
 
   ngOnInit(): void {
-  }
 
-  getConfiguration(): Partial<PluginConfiguration> {
-    const event = this.appEvent;
-    return {
-      addListeners: function (): Array<Listener> {
-        return [event]
+    this.subscriber = this._msg.subscribe(TOPIC_APP_EVENT, (m => {
+      if (m instanceof TextMessage) {
+        this.receivedTextFromOtherApp = m.text;
+
+        alert('This your favorite panel => ' + m.text);
+        this._cd.detectChanges();
       }
-    };
+    }));
   }
 
-  initialize(context: PluginContext): void {
+  ngOnDestroy(): void {
+    this.subscriber.unSubscribe();
   }
 }

@@ -1,15 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductSwitchItem, ShellbarMenuItem, ShellbarUser, ShellbarUserMenu} from '@fundamental-ngx/core';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
-import {AppShellProviderService, Message} from '@fundamental-ngx/app-shell';
-import { ThemeProvider } from '../lib/theme.provider';
+import {AppShellProviderService, Message, TopicSubscriber} from '@fundamental-ngx/app-shell';
+import {ThemeProvider} from '../lib/theme.provider';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 
   searchTerm: string;
   _cssUrl: SafeResourceUrl;
@@ -152,10 +152,10 @@ export class AppComponent implements OnInit {
       name: 'High Contrast White'
     }
   ];
-
+  subscriber: TopicSubscriber<Message>;
 
   constructor(private sanitizer: DomSanitizer, public _appShell: AppShellProviderService) {
-    this._appShell.messageBus.subscribe('app:event', (m: Message) => {
+    this.subscriber = this._appShell.messageBus.subscribe('app:event', (m: Message) => {
       this.onAppEvent(m);
     });
   }
@@ -166,6 +166,10 @@ export class AppComponent implements OnInit {
     ThemeProvider.setCurrentTheme({...this.themes[0], url: `${location.href}assets/theme/sap_fiori_3.css`});
   }
 
+
+  ngOnDestroy(): void {
+    this.subscriber.unSubscribe();
+  }
 
   settingsCallback($event): void {
     console.log($event);
