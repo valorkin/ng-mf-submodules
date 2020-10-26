@@ -33,6 +33,7 @@ module.exports = {
         sharedDep('@angular/core'),
         sharedDep('@angular/common'),
         sharedDep('@angular/router'),
+        sharedDep('@angular/forms'),
         sharedDep('@fundamental-ngx/core'),
         sharedDep('@fundamental-ngx/app-shell'),
         sharedDep('@ngrx/store'),

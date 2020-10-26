@@ -9,6 +9,7 @@ import {Message, MessagingService, TextMessage, TOPIC_THEME_CHANGE, TopicSubscri
 export class PrListComponent implements OnInit, OnDestroy {
   tableRows: any[];
   subscriber: TopicSubscriber<Message>;
+  cbValue = true;
 
   constructor(private messaging: MessagingService) {
   }
