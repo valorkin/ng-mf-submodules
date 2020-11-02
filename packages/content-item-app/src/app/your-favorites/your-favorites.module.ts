@@ -1,15 +1,14 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {YourFavoritesComponent} from './your-favorites.component';
-import {ButtonModule, ImageModule} from '@fundamental-ngx/core';
 import {RouterModule} from '@angular/router';
+import {ButtonModule} from '@fundamental-ngx/core';
+import {YourFavoritesComponent} from './your-favorites.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    ButtonModule,
-    ImageModule
+    ButtonModule
   ],
   declarations: [YourFavoritesComponent],
   exports: [YourFavoritesComponent],
