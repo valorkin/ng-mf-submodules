@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Message, MessagingService, TextMessage, TOPIC_THEME_CHANGE, TopicSubscriber} from '@fundamental-ngx/app-shell';
 
 
@@ -6,7 +6,18 @@ import {Message, MessagingService, TextMessage, TOPIC_THEME_CHANGE, TopicSubscri
   selector: 'app-pr-list',
   templateUrl: './pr-list.component.html',
 })
-export class PrListComponent implements OnInit, OnDestroy {
+export class PrListComponent implements OnInit, OnDestroy, OnChanges {
+  @Input()
+  showTitle: boolean = false;
+
+  @Input()
+  title: string;
+
+
+  @Output()
+  lineItemClicked: EventEmitter<string> = new EventEmitter<string>();
+
+
   tableRows: any[];
   subscriber: TopicSubscriber<Message>;
   cbValue = true;
@@ -50,6 +61,11 @@ export class PrListComponent implements OnInit, OnDestroy {
       console.log('@@@ PR-LIST: Theme changed to => ', m);
     }));
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('==> PrListComponent :', changes);
+  }
+
 
   ngOnDestroy(): void {
     this.subscriber.unSubscribe();

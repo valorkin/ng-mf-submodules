@@ -20,6 +20,7 @@ import {
   IframeLandingComponent,
   LandingComponent,
 } from './components';
+import {PluginLauncherComponent} from './components/plugin-launcher.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import {
     AppComponent,
     IframeLandingComponent,
     LandingComponent,
+    PluginLauncherComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,8 @@
 <fd-layout-grid [col]="6">
   <fd-layout-panel [columnSpan]="4" fdLayoutGridSpan>
     <fd-layout-panel-body>
-      <fds-plugin-launcher name="contentReqApp" module="PrListComponent"></fds-plugin-launcher>
+      <app-plugin-launcher name="contentReqApp" module="PrListComponent"
+                           [bindings]="prBindings" ></app-plugin-launcher>
     </fd-layout-panel-body>
   </fd-layout-panel>
   <fd-layout-panel [columnSpan]="2" fdLayoutGridSpan>
