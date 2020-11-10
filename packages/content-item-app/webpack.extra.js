@@ -10,7 +10,6 @@ const name = 'contentItemApp';
 
 module.exports = {
   output: {
-    publicPath: 'http://localhost:4202/',
     uniqueName: name
   },
   optimization: {
@@ -23,10 +22,10 @@ module.exports = {
       library: { type: 'var', name: name },
       filename: 'remoteEntry.js',
       exposes: {
-        './CatalogItem': './packages/content-item-app/src/app/item-page/item-page.component.ts',
-        './IframeCatalogItem': './packages/content-item-app/src/app/iframe-item-page/iframe-item-page.component.ts',
-        './YourFavorites': './packages/content-item-app/src/app/your-favorites/your-favorites.component.ts',
-        './ItemDetails': './packages/content-item-app/src/app/item-details/item-details.module.ts',
+        './CatalogItem': './packages/content-item-app/src/app/item-page/item-page.module.ts',
+        // './IframeCatalogItem': './packages/content-item-app/src/app/iframe-item-page/iframe-item-page.component.ts',
+        './YourFavorites': './packages/content-item-app/src/app/your-favorites/your-favorites.module.ts',
+        // './ItemDetails': './packages/content-item-app/src/app/item-details/item-details.module.ts',
       },
       shared: [
         sharedDep('@angular/core'),

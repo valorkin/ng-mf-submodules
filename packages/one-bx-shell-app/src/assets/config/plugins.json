@@ -6,14 +6,10 @@
     "uri": "http://localhost:4201/remoteEntry.js",
     "modules": [
       {
-        "name": "PrListComponent",
+        "name": "PrListModule",
+        "component": "PrListComponent",
         "type": "angular-ivy-component",
         "exposedModule": "./PrList"
-      },
-      {
-        "name": "DownloadComponent",
-        "type": "angular-ivy-component",
-        "exposedModule": "./Download"
       }
     ]
   },
@@ -24,12 +20,14 @@
     "uri": "http://localhost:4202/remoteEntry.js",
     "modules": [
       {
-        "name": "YourFavoritesComponent",
+        "name": "YourFavoritesModule",
+        "component": "YourFavoritesComponent",
         "type": "angular-ivy-component",
         "exposedModule": "./YourFavorites"
       },
       {
-        "name": "ItemPageComponent",
+        "name": "ItemPageModule",
+        "component": "ItemPageComponent",
         "type": "angular-ivy-component",
         "exposedModule": "./CatalogItem",
         "route": "item-detail"
@@ -43,7 +41,8 @@
     "uri": "http://localhost:4203/remoteEntry.js",
     "modules": [
       {
-        "name": "RecommendedCategoriesComponent",
+        "name": "RecommendedCategoriesModule",
+        "component": "RecommendedCategoriesComponent",
         "type": "angular-ivy-component",
         "exposedModule": "./RecommendedCategories"
       }
@@ -56,7 +55,8 @@
     "uri": "http://localhost:4205/remoteEntry.js",
     "modules": [
       {
-        "name": "CounterComponent",
+        "name": "CounterModule",
+        "component": "CounterComponent",
         "type": "angular-ivy-component",
         "exposedModule": "./Counter",
         "route": "calc"
@@ -70,7 +70,8 @@
     "uri": "http://localhost:4204/remoteEntry.js",
     "modules": [
       {
-        "name": "YourFavoritesComponent",
+        "name": "YourFavoritesModule",
+        "component": "YourFavoritesComponent",
         "type": "angular-ivy-component",
         "exposedModule": "./YourFavorites"
       }

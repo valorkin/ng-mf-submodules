@@ -10,7 +10,6 @@ const name = 'oneBxShellApp'
 
 module.exports = {
   output: {
-    publicPath: 'http://localhost:4200/',
     uniqueName: name
   },
   optimization: {

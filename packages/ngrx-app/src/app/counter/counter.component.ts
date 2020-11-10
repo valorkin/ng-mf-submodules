@@ -1,22 +1,17 @@
 import { Component, Injector, OnDestroy } from '@angular/core';
-import { select, Store, StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-
-import { map } from 'rxjs/operators';
+import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 
-import { AppState, reducers, selectCounterState } from '../store/app.states';
+import { map } from 'rxjs/operators';
 import { decrement, increment } from '../store/actions';
+
+import { AppState, selectCounterState } from '../store/app.states';
 import { CounterEffects } from '../store/effects';
 
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
-  styleUrls: ['./counter.component.scss'],
-  providers: [
-    StoreModule.forRoot(reducers, {}).providers,
-    EffectsModule.forRoot([CounterEffects]).providers
-  ]
+  styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent implements OnDestroy {
   count$: Observable<number>;
@@ -37,11 +32,11 @@ export class CounterComponent implements OnDestroy {
       map((state: any) => state.counter));
   }
 
-  increment() {
+  increment(): void {
     this.store.dispatch(increment());
   }
 
-  decrement() {
+  decrement(): void {
     this.store.dispatch(decrement());
   }
 
