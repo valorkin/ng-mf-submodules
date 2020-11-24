@@ -22,7 +22,6 @@ module.exports = {
       library: { type: 'var', name: name },
       filename: 'remoteEntry.js',
       exposes: {
-        // './CatalogItem': './packages/nx-app/libs/shared/src/lib/item-page/item-page.component.ts',
         './YourFavorites': './packages/nx-app/apps/nx-app/src/app/your-favorites/your-favorites.module.ts',
       },
       shared: [
