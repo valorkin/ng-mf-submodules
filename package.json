@@ -44,7 +44,7 @@
     "@angular/platform-browser-dynamic": "11.0.0-next.6",
     "@angular/router": "11.0.0-next.6",
     "@fundamental-ngx/app-shell": "/home/valorkin/work/sap/fundamental-ngx/dist/libs/app-shell",
-    "@fundamental-ngx/core": "/home/valorkin/work/sap/fundamental-ngx/dist/libs/core",
+    "@fundamental-ngx/core": "^0.24.1",
     "rxjs": "6.6.0",
     "terser": "5.3.7",
     "tslib": "2.0.0",

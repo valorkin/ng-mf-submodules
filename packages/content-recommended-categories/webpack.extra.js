@@ -22,7 +22,7 @@ module.exports = {
       library: {type: 'var', name: name},
       filename: 'remoteEntry.js',
       exposes: {
-        './RecommendedCategories': './packages/content-recommended-categories/src/app/recommended-categories/recommended-categories.module.ts',
+        './RecommendedCategories': './packages/content-recommended-categories/src/app/recommended-categories/recommended-categories.component.ts',
       },
       shared: [
         sharedDep('@angular/core'),

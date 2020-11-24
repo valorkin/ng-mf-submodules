@@ -22,7 +22,7 @@ module.exports = {
       library: { type: 'var', name: name },
       filename: 'remoteEntry.js',
       exposes: {
-        './PrList': './packages/content-req-app/src/app/pr-list/pr-list.module.ts'
+        './PrList': './packages/content-req-app/src/app/pr-list/pr-list.component.ts'
       },
       shared: [
         sharedDep('@angular/core'),

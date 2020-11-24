@@ -6,8 +6,7 @@
     "uri": "http://localhost:4201/remoteEntry.js",
     "modules": [
       {
-        "name": "PrListModule",
-        "component": "PrListComponent",
+        "name": "PrListComponent",
         "type": "angular-ivy-component",
         "exposedModule": "./PrList"
       }
@@ -41,8 +40,7 @@
     "uri": "http://localhost:4203/remoteEntry.js",
     "modules": [
       {
-        "name": "RecommendedCategoriesModule",
-        "component": "RecommendedCategoriesComponent",
+        "name": "RecommendedCategoriesComponent",
         "type": "angular-ivy-component",
         "exposedModule": "./RecommendedCategories"
       }

@@ -1203,17 +1203,20 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
-"@fundamental-ngx/app-shell@/home/valorkin/work/sap/fundamental-ngx/dist/libs/app-shell", "@fundamental-ngx/app-shell@file:../fundamental-ngx/dist/libs/app-shell":
+"@fundamental-ngx/app-shell@file:../fundamental-ngx/dist/libs/app-shell":
   version "0.2.34"
   dependencies:
     tslib "^2.0.0"
 
-"@fundamental-ngx/core@/home/valorkin/work/sap/fundamental-ngx/dist/libs/core", "@fundamental-ngx/core@file:../fundamental-ngx/dist/libs/core":
-  version "0.23.1-rc.2"
+"@fundamental-ngx/core@^0.24.1":
+  version "0.24.1"
+  resolved "https://registry.yarnpkg.com/@fundamental-ngx/core/-/core-0.24.1.tgz#53ef95ba0f40f0873e4fabd1b97458b705b53cf6"
+  integrity sha512-mmb0QLefFt34pvnirBqavGiy26u/8NtmQFg60OsyTZWyb58H/ER5lRRuZm2FXW44bVVqIONMU9A0TpKpN9AuhA==
   dependencies:
     "@sap-theming/theming-base-content" "11.1.22"
-    focus-trap "6.1.3"
+    focus-trap "6.1.4"
     fundamental-styles "0.12.0"
+    hammerjs "2.0.8"
     popper.js "1.16.1"
     tslib "^2.0.0"
 
@@ -5026,12 +5029,12 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-focus-trap@6.1.3:
-  version "6.1.3"
-  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-6.1.3.tgz#38b79099bec42b9efa9ee47b646a21033dd030fd"
-  integrity sha512-UXrRlMIZVwLRt4t/fdhExuD3nanc2oHlyJrjbUl01iR2Z59/uPOAj4V9A6k2aelLb/aKb3YKJG+S4HBTrnTWHA==
+focus-trap@6.1.4:
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-6.1.4.tgz#6297a9f0f45a84377b60e9a8c0d1f8a5b98d94d2"
+  integrity sha512-jgNc+O8UkGsUpdhNXkyonwlw4i707+ESAWv1vCbyd8+29db5/Wv1BkJImDczfEWMu9O635FvM5ABOjeyqNQpEQ==
   dependencies:
-    tabbable "^5.1.2"
+    tabbable "^5.1.3"
 
 follow-redirects@^1.0.0:
   version "1.13.0"
@@ -5365,6 +5368,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
+
+hammerjs@2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
+  integrity sha1-BO93hiz/K7edMPdpIJWTAiK/YPE=
 
 handle-thing@^2.0.0:
   version "2.0.1"
@@ -10082,7 +10090,7 @@ symbol-observable@2.0.3:
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-2.0.3.tgz"
   integrity sha512-sQV7phh2WCYAn81oAkakC5qjq2Ml0g8ozqz03wOGnx9dDlG1de6yrF+0RAzSJD8fPUow3PTSMf2SAbOGxb93BA==
 
-tabbable@^5.1.2:
+tabbable@^5.1.3:
   version "5.1.3"
   resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-5.1.3.tgz#8bb22b620d5a54d575c3243e4a324bd36acf99ec"
   integrity sha512-jqR3rOgeyNlYWDWoyjNTWuHk3+FObu3Fw4e0zjeOLBicI74TT/wGrvSbJUaFVs7FMfiY0Ee8CKM7QaJwVMT4YA==
