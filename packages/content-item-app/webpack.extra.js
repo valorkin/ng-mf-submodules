@@ -23,9 +23,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         './CatalogItem': './packages/content-item-app/src/app/item-page/item-page.module.ts',
-        // './IframeCatalogItem': './packages/content-item-app/src/app/iframe-item-page/iframe-item-page.component.ts',
         './YourFavorites': './packages/content-item-app/src/app/your-favorites/your-favorites.module.ts',
-        // './ItemDetails': './packages/content-item-app/src/app/item-details/item-details.module.ts',
       },
       shared: [
         sharedDep('@angular/core'),

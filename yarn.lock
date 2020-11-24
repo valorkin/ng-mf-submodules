@@ -1203,12 +1203,14 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
-"@fundamental-ngx/app-shell@file:../fundamental-ngx/dist/libs/app-shell":
-  version "0.2.34"
+"@fundamental-ngx/app-shell@0.2.35":
+  version "0.2.35"
+  resolved "https://registry.yarnpkg.com/@fundamental-ngx/app-shell/-/app-shell-0.2.35.tgz#5e59d19e15d3bb935df7709813416b0424cc6b21"
+  integrity sha512-63YKLNC7k9W7ytVk3fWYx97bAOaeMx9OAtZW1EP4nkMhjBvqm/jpJr7hxTBjanTH75wGUFdwcRoVJ7QJI/++MA==
   dependencies:
     tslib "^2.0.0"
 
-"@fundamental-ngx/core@^0.24.1":
+"@fundamental-ngx/core@0.24.1":
   version "0.24.1"
   resolved "https://registry.yarnpkg.com/@fundamental-ngx/core/-/core-0.24.1.tgz#53ef95ba0f40f0873e4fabd1b97458b705b53cf6"
   integrity sha512-mmb0QLefFt34pvnirBqavGiy26u/8NtmQFg60OsyTZWyb58H/ER5lRRuZm2FXW44bVVqIONMU9A0TpKpN9AuhA==
