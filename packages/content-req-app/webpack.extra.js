@@ -10,7 +10,6 @@ const name = 'contentReqApp';
 
 module.exports = {
   output: {
-    publicPath: 'http://localhost:4201/',
     uniqueName: name
   },
   optimization: {
@@ -23,7 +22,6 @@ module.exports = {
       library: { type: 'var', name: name },
       filename: 'remoteEntry.js',
       exposes: {
-        './Download': './packages/content-req-app/src/app/download.component.ts',
         './PrList': './packages/content-req-app/src/app/pr-list/pr-list.component.ts'
       },
       shared: [

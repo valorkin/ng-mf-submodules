@@ -10,7 +10,6 @@ const name = 'contentRecommendedCategories';
 
 module.exports = {
   output: {
-    publicPath: 'http://localhost:4203/',
     uniqueName: name
   },
   optimization: {
@@ -20,10 +19,11 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: name,
-      library: { type: 'var', name: name },
+      library: {type: 'var', name: name},
       filename: 'remoteEntry.js',
       exposes: {
-        './RecommendedCategories': './packages/content-recommended-categories/src/app/recommended-categories/recommended-categories.component.ts',      },
+        './RecommendedCategories': './packages/content-recommended-categories/src/app/recommended-categories/recommended-categories.component.ts',
+      },
       shared: [
         sharedDep('@angular/core'),
         sharedDep('@angular/common'),

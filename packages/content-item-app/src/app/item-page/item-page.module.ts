@@ -25,3 +25,5 @@ import { ItemPageComponent } from './item-page.component';
 })
 export class ItemPageModule {
 }
+
+export { ItemPageComponent };

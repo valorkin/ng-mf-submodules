@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from '../store/app.states';
+import { CounterEffects } from '../store/effects';
+import { CounterChildModule } from './counter-child/counter-child.module';
 import { CounterRoutingModule } from './counter-routing.module';
 import { CounterComponent } from './counter.component';
-import { CounterChildComponent } from './counter-child/counter-child.component';
-
 
 @NgModule({
   declarations: [
-    CounterComponent,
-    CounterChildComponent
+    CounterComponent
   ],
   imports: [
     CommonModule,
     CounterRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot(reducers, {}),
+    EffectsModule.forRoot([CounterEffects]),
+    CounterChildModule,
   ],
   exports: [
     CounterComponent
@@ -23,3 +28,5 @@ import { CounterChildComponent } from './counter-child/counter-child.component';
 })
 export class CounterModule {
 }
+
+export { CounterComponent };

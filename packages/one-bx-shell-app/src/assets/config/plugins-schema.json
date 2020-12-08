@@ -30,6 +30,9 @@
                   "name": {
                     "type": "string"
                   },
+                  "component": {
+                    "type": "string"
+                  },
                   "type": {
                     "type": "string"
                   },

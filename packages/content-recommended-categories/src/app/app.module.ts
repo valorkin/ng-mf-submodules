@@ -1,17 +1,15 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {LayoutPanelModule} from '@fundamental-ngx/core';
-import {AppComponent} from './app.component';
-import {RecommendedCategoriesComponent} from './recommended-categories/recommended-categories.component';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { RecommendedCategoriesModule } from './recommended-categories/recommended-categories.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RecommendedCategoriesComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    LayoutPanelModule
+    RecommendedCategoriesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

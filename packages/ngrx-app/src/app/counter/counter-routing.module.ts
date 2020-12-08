@@ -1,16 +1,14 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CounterComponent } from './counter.component';
-
-const APP_ROUTES: Routes = [
-  {path: 'calc', component: CounterComponent}
-];
-
-export const counterRoute: ModuleWithProviders<RouterModule> = RouterModule.forChild(APP_ROUTES);
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
-    counterRoute
+    RouterModule.forChild([
+      {
+        path: '',
+        loadChildren: () => import('./counter-child/counter-child.module').then(m => m.CounterChildModule)
+      }
+    ])
   ],
   exports: [
     RouterModule
