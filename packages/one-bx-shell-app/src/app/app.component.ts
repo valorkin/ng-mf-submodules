@@ -1,7 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductSwitchItem, ShellbarMenuItem, ShellbarUser, ShellbarUserMenu} from '@fundamental-ngx/core';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
-import {AppShellProviderService, Message, TopicSubscriber} from '@fundamental-ngx/app-shell';
+import {Message, TopicSubscriber} from '@fundamental-ngx/app-shell';
+import {AppShellProviderService} from '../app/api/app-shell-provider.service';
 import {ThemeProvider} from '../lib/theme.provider';
 
 @Component({
