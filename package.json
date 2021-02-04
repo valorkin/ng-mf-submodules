@@ -9,6 +9,7 @@
     "start:prod": "concurrently \"npm:c-serve-*\" -- --prod",
     "postinstall": "lerna bootstrap && npm run inst:builder",
     "lerna": "lerna",
+    "ng": "ng",
     "build": "ng build",
     "inst:builder": "yarn --cwd mf-builder",
     "//01": "commands to serve all the apps in parallel",
