@@ -5,7 +5,6 @@ import {
 } from '@angular/core';
 import { IS_APPSHELL_STANDALONE } from '@fundamental-ngx/app-shell';
 
-
 @Component({
     selector: 'fds-app-content',
     templateUrl: './app-content.component.html',
@@ -13,9 +12,5 @@ import { IS_APPSHELL_STANDALONE } from '@fundamental-ngx/app-shell';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppShellContentComponent {
-
-
-    constructor(@Inject(IS_APPSHELL_STANDALONE) public _isStandalone: boolean) {
-    }
-
+    constructor(@Inject(IS_APPSHELL_STANDALONE) public _isStandalone: boolean) {}
 }
