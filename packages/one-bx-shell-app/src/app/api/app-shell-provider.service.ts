@@ -4,7 +4,6 @@ import {
 } from '@angular/core';
 import {
     ThemeManagerService,
-    MessagingTopics,
     MessagingService
 } from '@fundamental-ngx/app-shell';
 import { ShellBarService } from './shell-bar.service';
@@ -13,7 +12,6 @@ import { ShellBarService } from './shell-bar.service';
 export class AppShellProviderService {
 
     constructor(private ngZone: NgZone,
-                private topics: MessagingTopics,
                 public themeManager: ThemeManagerService,
                 public messageBus: MessagingService,
                 public shellBar?: ShellBarService
