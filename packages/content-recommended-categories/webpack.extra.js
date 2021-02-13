@@ -23,6 +23,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         './RecommendedCategories': './packages/content-recommended-categories/src/app/recommended-categories/recommended-categories.component.ts',
+        './TestError': './packages/content-recommended-categories/src/app/test-error/error.component.ts'
       },
       shared: [
         sharedDep('@angular/core'),

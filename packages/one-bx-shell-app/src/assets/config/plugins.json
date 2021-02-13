@@ -43,6 +43,21 @@
         "name": "RecommendedCategoriesComponent",
         "type": "angular-ivy-component",
         "exposedModule": "./RecommendedCategories"
+      },
+      {
+        "name": "ErrorComponent1",
+        "type": "angular-ivy-component",
+        "exposedModule": "./NonExistent"
+      },
+      {
+        "name": "ErrorComponent2",
+        "type": "angular-ivy-component",
+        "exposedModule": "./TestError"
+      },
+      {
+        "name": "ErrorCustomElement1",
+        "type": "custom-element",
+        "exposedModule": "./TestError"
       }
     ]
   },
@@ -98,6 +113,19 @@
         "name": "landing",
         "type": "iframe",
         "html": "/index.html"
+      }
+    ]
+  },
+  {
+    "name": "pluginForTestingModuleLoadingError",
+    "version": "0.0.0",
+    "provider": "Test",
+    "uri": "http://localhost:0000/entry.js",
+    "modules": [
+      {
+        "name": "ErroredComponent",
+        "type": "angular-ivy-component",
+        "exposedModule": "./NonExistent"
       }
     ]
   }
