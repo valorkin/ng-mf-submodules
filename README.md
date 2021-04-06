@@ -1,3 +1,8 @@
+# Moved to module-federation monorepo
+
+https://github.com/valorkin/module-federation
+
+-------------
 # Overview
 
 This project demonstrates how `module federation` works in Angular based environment and its
